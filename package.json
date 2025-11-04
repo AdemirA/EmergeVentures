@@ -1,0 +1,22 @@
+{
+  "name": "emergevetures",
+  "version": "1.0.0",
+  "description": "> Uma nova geração de marcas de consumo que estão redefinindo suas categorias.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "firebase deploy --only hosting",
+    "deploy:preview": "firebase hosting:channel:deploy preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdemirA/EmergeVentures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdemirA/EmergeVentures/issues"
+  },
+  "homepage": "https://github.com/AdemirA/EmergeVentures#readme"
+}
