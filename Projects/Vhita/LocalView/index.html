@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vhita — Viva Mais e Melhor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-green:#00c853;
+      --brand-green-dark:#00a040;
+      --brand-green-light:#69f0ae;
+      --accent-teal:#00bfa5;
+      --cream:#f1f8f4;
+      --ink:#1a1a1a;
+    }
+    *{margin:0; padding:0; box-sizing:border-box;}
+    body{
+      font-family:'Inter', sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+    }
+    
+    /* Navbar */
+    .navbar{
+      background:rgba(255,255,255,0.98);
+      backdrop-filter:blur(10px);
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 20px rgba(0,200,83,0.1);
+    }
+    .brand-logo{
+      font-family:'Sora', sans-serif;
+      font-size:32px;
+      font-weight:800;
+      color:var(--brand-green);
+      letter-spacing:-1px;
+    }
+    .nav-menu{
+      display:flex;
+      gap:32px;
+      list-style:none;
+    }
+    .nav-menu a{
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:500;
+      font-size:15px;
+      transition:color 0.3s;
+    }
+    .nav-menu a:hover{color:var(--brand-green);}
+    
+    /* Hero */
+    .hero{
+      min-height:90vh;
+      background:linear-gradient(135deg, var(--cream) 0%, #ffffff 100%);
+      padding:80px 40px;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      left:-20%;
+      width:1000px;
+      height:1000px;
+      background:radial-gradient(circle, rgba(0,200,83,0.08) 0%, transparent 70%);
+      border-radius:50%;
+    }
+    .hero-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .hero-content{}
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--brand-green);
+      color:#fff;
+      padding:10px 24px;
+      border-radius:50px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:24px;
+      letter-spacing:0.5px;
+    }
+    .hero-title{
+      font-family:'Sora', sans-serif;
+      font-size:clamp(40px, 5.5vw, 68px);
+      font-weight:800;
+      line-height:1.1;
+      color:var(--ink);
+      margin-bottom:28px;
+    }
+    .hero-title .accent{
+      background:linear-gradient(135deg, var(--brand-green), var(--accent-teal));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .hero-description{
+      font-size:19px;
+      color:#555;
+      line-height:1.8;
+      margin-bottom:36px;
+      max-width:90%;
+    }
+    .hero-features{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-bottom:36px;
+    }
+    .feature-item{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:16px;
+      color:#333;
+    }
+    .feature-icon{
+      width:28px;
+      height:28px;
+      background:var(--brand-green);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:14px;
+      flex-shrink:0;
+    }
+    .hero-buttons{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:16px 36px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:15px;
+      transition:all 0.3s ease;
+      display:inline-block;
+    }
+    .btn-primary{
+      background:var(--brand-green);
+      color:#fff;
+      box-shadow:0 4px 20px rgba(0,200,83,0.3);
+    }
+    .btn-primary:hover{
+      background:var(--brand-green-dark);
+      transform:translateY(-2px);
+      box-shadow:0 6px 30px rgba(0,200,83,0.4);
+    }
+    .btn-secondary{
+      background:#fff;
+      color:var(--brand-green);
+      border:2px solid var(--brand-green);
+    }
+    .btn-secondary:hover{
+      background:var(--brand-green);
+      color:#fff;
+    }
+    .hero-visual{
+      position:relative;
+    }
+    .hero-image{
+      width:100%;
+      height:550px;
+      background:linear-gradient(135deg, var(--brand-green), var(--accent-teal));
+      border-radius:30px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:140px;
+      box-shadow:0 30px 60px rgba(0,200,83,0.2);
+      position:relative;
+    }
+    .floating-badge{
+      position:absolute;
+      background:#fff;
+      padding:20px 24px;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+      font-size:14px;
+    }
+    .floating-badge.top-right{
+      top:30px;
+      right:30px;
+    }
+    .floating-badge.bottom-left{
+      bottom:30px;
+      left:30px;
+    }
+    .badge-label{
+      color:#999;
+      font-size:12px;
+      margin-bottom:4px;
+    }
+    .badge-value{
+      font-family:'Sora', sans-serif;
+      font-size:24px;
+      font-weight:700;
+      color:var(--brand-green);
+    }
+    
+    /* Produtos */
+    .products{
+      padding:120px 40px;
+      background:#fff;
+    }
+    .products-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .section-header{
+      text-align:center;
+      margin-bottom:70px;
+    }
+    .section-label{
+      color:var(--brand-green);
+      font-weight:600;
+      font-size:14px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .section-title{
+      font-family:'Sora', sans-serif;
+      font-size:52px;
+      font-weight:700;
+      color:var(--ink);
+      margin-bottom:20px;
+    }
+    .section-subtitle{
+      font-size:19px;
+      color:#666;
+      max-width:700px;
+      margin:0 auto;
+      line-height:1.7;
+    }
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      gap:32px;
+    }
+    .product-card{
+      background:var(--cream);
+      border-radius:24px;
+      padding:40px;
+      transition:all 0.3s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .product-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:4px;
+      background:linear-gradient(90deg, var(--brand-green), var(--accent-teal));
+      transform:scaleX(0);
+      transition:transform 0.3s ease;
+    }
+    .product-card:hover::before{
+      transform:scaleX(1);
+    }
+    .product-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.1);
+    }
+    .product-icon{
+      width:70px;
+      height:70px;
+      background:linear-gradient(135deg, var(--brand-green), var(--accent-teal));
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:36px;
+      margin-bottom:24px;
+    }
+    .product-name{
+      font-family:'Sora', sans-serif;
+      font-size:26px;
+      font-weight:700;
+      margin-bottom:16px;
+      color:var(--ink);
+    }
+    .product-description{
+      color:#666;
+      line-height:1.7;
+      margin-bottom:24px;
+    }
+    .product-benefits{
+      list-style:none;
+      margin-bottom:28px;
+    }
+    .product-benefits li{
+      padding:8px 0;
+      color:#555;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .product-benefits li::before{
+      content:'✓';
+      color:var(--brand-green);
+      font-weight:700;
+      font-size:18px;
+    }
+    .product-footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-top:24px;
+      border-top:1px solid rgba(0,0,0,0.08);
+    }
+    .product-price{
+      font-family:'Sora', sans-serif;
+      font-size:32px;
+      font-weight:700;
+      color:var(--brand-green);
+    }
+    
+    /* Certificações */
+    .certifications{
+      padding:120px 40px;
+      background:linear-gradient(135deg, var(--brand-green-dark) 0%, var(--brand-green) 100%);
+      color:#fff;
+    }
+    .certifications-inner{
+      max-width:1200px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .certifications-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:40px;
+      margin-top:60px;
+    }
+    .cert-item{
+      padding:40px;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      border-radius:20px;
+      transition:transform 0.3s ease;
+    }
+    .cert-item:hover{
+      transform:translateY(-10px);
+    }
+    .cert-icon{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+    .cert-title{
+      font-family:'Sora', sans-serif;
+      font-size:20px;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+    .cert-description{
+      font-size:15px;
+      opacity:0.9;
+    }
+    
+    /* Diferenciais */
+    .differentials{
+      padding:120px 40px;
+      background:var(--cream);
+    }
+    .differentials-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .differentials-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:40px;
+      margin-top:60px;
+    }
+    .differential-card{
+      background:#fff;
+      padding:50px;
+      border-radius:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    }
+    .differential-number{
+      font-family:'Sora', sans-serif;
+      font-size:48px;
+      font-weight:800;
+      color:var(--brand-green);
+      opacity:0.2;
+      margin-bottom:20px;
+    }
+    .differential-title{
+      font-family:'Sora', sans-serif;
+      font-size:28px;
+      font-weight:700;
+      margin-bottom:16px;
+      color:var(--ink);
+    }
+    .differential-description{
+      color:#666;
+      line-height:1.8;
+      font-size:17px;
+    }
+    
+    /* CTA */
+    .cta{
+      padding:120px 40px;
+      background:linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      color:#fff;
+      text-align:center;
+    }
+    .cta h2{
+      font-family:'Sora', sans-serif;
+      font-size:52px;
+      font-weight:700;
+      margin-bottom:24px;
+    }
+    .cta p{
+      font-size:20px;
+      opacity:0.9;
+      margin-bottom:40px;
+      max-width:600px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    
+    /* Footer */
+    footer{
+      background:var(--ink);
+      color:#999;
+      padding:70px 40px 40px;
+    }
+    .footer-content{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:50px;
+      margin-bottom:50px;
+    }
+    .footer-section h4{
+      color:#fff;
+      font-family:'Sora', sans-serif;
+      font-size:20px;
+      font-weight:600;
+      margin-bottom:24px;
+    }
+    .footer-section p{
+      color:#999;
+      line-height:1.8;
+      margin-bottom:16px;
+    }
+    .footer-section a{
+      color:#999;
+      text-decoration:none;
+      display:block;
+      margin-bottom:12px;
+      transition:color 0.3s;
+    }
+    .footer-section a:hover{color:var(--brand-green);}
+    .social-links{
+      display:flex;
+      gap:16px;
+      margin-top:20px;
+    }
+    .social-link{
+      width:40px;
+      height:40px;
+      background:rgba(255,255,255,0.1);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:all 0.3s;
+    }
+    .social-link:hover{
+      background:var(--brand-green);
+    }
+    .footer-bottom{
+      text-align:center;
+      padding-top:40px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:#666;
+    }
+    
+    @media (max-width: 768px) {
+      .navbar{padding:15px 20px;}
+      .nav-menu{display:none;}
+      .hero{padding:60px 20px;}
+      .hero-inner{grid-template-columns:1fr;}
+      .products, .certifications, .differentials, .cta{padding:80px 20px;}
+      .differentials-grid{grid-template-columns:1fr;}
+      .footer-content{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand-logo">Vhita</div>
+    <ul class="nav-menu">
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#qualidade">Qualidade</a></li>
+      <li><a href="#diferenciais">Diferenciais</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          ✨ Certificação Internacional
+        </div>
+        <h1 class="hero-title">Viva <span class="accent">mais e melhor</span></h1>
+        <p class="hero-description">Suplementos de classe mundial dedicados a promover saúde e longevidade. Desenvolvidos para adultos que se preocupam com os sinais da idade e buscam qualidade de vida.</p>
+        <div class="hero-features">
+          <div class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Ingredientes de alta qualidade</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Certificações internacionais</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">✓</span>
+            <span>Formulações cientificamente comprovadas</span>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#produtos" class="btn btn-primary">Ver Produtos</a>
+          <a href="#qualidade" class="btn btn-secondary">Nossa Qualidade</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image">💊</div>
+        <div class="floating-badge top-right">
+          <div class="badge-label">Satisfação</div>
+          <div class="badge-value">98%</div>
+        </div>
+        <div class="floating-badge bottom-left">
+          <div class="badge-label">Clientes</div>
+          <div class="badge-value">50k+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section class="products" id="produtos">
+    <div class="products-inner">
+      <div class="section-header">
+        <div class="section-label">Linha Completa</div>
+        <h2 class="section-title">Nossos Suplementos</h2>
+        <p class="section-subtitle">Produtos desenvolvidos com os mais altos padrões de qualidade para sua saúde e bem-estar</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon">🐟</div>
+          <h3 class="product-name">Ômega 3 Premium</h3>
+          <p class="product-description">Óleo de peixe purificado com alta concentração de EPA e DHA para saúde cardiovascular e cerebral.</p>
+          <ul class="product-benefits">
+            <li>Saúde cardiovascular</li>
+            <li>Função cerebral</li>
+            <li>Anti-inflamatório natural</li>
+          </ul>
+          <div class="product-footer">
+            <div class="product-price">R$ 89</div>
+            <a href="#" class="btn btn-secondary" style="font-size:14px; padding:10px 20px;">Comprar</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">⚡</div>
+          <h3 class="product-name">Magnésio Quelato</h3>
+          <p class="product-description">Magnésio de alta biodisponibilidade para energia, músculos e sistema nervoso.</p>
+          <ul class="product-benefits">
+            <li>Mais energia e disposição</li>
+            <li>Saúde muscular</li>
+            <li>Reduz fadiga</li>
+          </ul>
+          <div class="product-footer">
+            <div class="product-price">R$ 79</div>
+            <a href="#" class="btn btn-secondary" style="font-size:14px; padding:10px 20px;">Comprar</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">☀️</div>
+          <h3 class="product-name">Multivitamínico</h3>
+          <p class="product-description">Complexo completo de vitaminas e minerais essenciais para vitalidade diária.</p>
+          <ul class="product-benefits">
+            <li>Imunidade fortalecida</li>
+            <li>Mais vitalidade</li>
+            <li>Nutrição completa</li>
+          </ul>
+          <div class="product-footer">
+            <div class="product-price">R$ 99</div>
+            <a href="#" class="btn btn-secondary" style="font-size:14px; padding:10px 20px;">Comprar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificações -->
+  <section class="certifications" id="qualidade">
+    <div class="certifications-inner">
+      <div class="section-header">
+        <div class="section-label" style="color:rgba(255,255,255,0.8)">Qualidade Garantida</div>
+        <h2 class="section-title">Certificações Internacionais</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.9)">Nossos produtos atendem aos mais rigorosos padrões de qualidade mundial</p>
+      </div>
+      <div class="certifications-grid">
+        <div class="cert-item">
+          <div class="cert-icon">🏆</div>
+          <div class="cert-title">GMP Certificado</div>
+          <p class="cert-description">Boas Práticas de Fabricação</p>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">✅</div>
+          <div class="cert-title">FDA Approved</div>
+          <p class="cert-description">Aprovado pela FDA</p>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🔬</div>
+          <div class="cert-title">Testado</div>
+          <p class="cert-description">Laboratórios Certificados</p>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon">🌱</div>
+          <div class="cert-title">100% Natural</div>
+          <p class="cert-description">Ingredientes Naturais</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section class="differentials" id="diferenciais">
+    <div class="differentials-inner">
+      <div class="section-header">
+        <div class="section-label">Por que escolher Vhita</div>
+        <h2 class="section-title">Nossos Diferenciais</h2>
+      </div>
+      <div class="differentials-grid">
+        <div class="differential-card">
+          <div class="differential-number">01</div>
+          <h3 class="differential-title">Qualidade Premium</h3>
+          <p class="differential-description">Ingredientes cuidadosamente selecionados de fornecedores certificados internacionalmente. Cada lote passa por rigorosos testes de qualidade.</p>
+        </div>
+        <div class="differential-card">
+          <div class="differential-number">02</div>
+          <h3 class="differential-title">Ciência Comprovada</h3>
+          <p class="differential-description">Fórmulas baseadas em estudos científicos e desenvolvidas por especialistas em nutrição e longevidade.</p>
+        </div>
+        <div class="differential-card">
+          <div class="differential-number">03</div>
+          <h3 class="differential-title">Transparência Total</h3>
+          <p class="differential-description">Rótulos claros com todas as informações sobre ingredientes, dosagens e origem dos componentes.</p>
+        </div>
+        <div class="differential-card">
+          <div class="differential-number">04</div>
+          <h3 class="differential-title">Sustentabilidade</h3>
+          <p class="differential-description">Compromisso com práticas sustentáveis em toda a cadeia de produção, do fornecedor ao cliente final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Invista na Sua Saúde</h2>
+    <p>Descubra como os suplementos certos podem transformar sua qualidade de vida</p>
+    <a href="https://vhita.com.br" class="btn btn-primary">Começar Agora</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Vhita</h4>
+        <p>Suplementos de alta qualidade para uma vida mais longa e saudável. Compromisso com a excelência e bem-estar.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">f</a>
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">tw</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Produtos</h4>
+        <a href="#">Ômega 3</a>
+        <a href="#">Magnésio</a>
+        <a href="#">Vitaminas</a>
+        <a href="#">Ver Todos</a>
+      </div>
+      <div class="footer-section">
+        <h4>Empresa</h4>
+        <a href="#">Sobre Nós</a>
+        <a href="#">Qualidade</a>
+        <a href="#">Blog</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-section">
+        <h4>Suporte</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Envio</a>
+        <a href="#">Devolução</a>
+        <a href="#">Termos</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Vhita. Todos os direitos reservados. CNPJ: 00.000.000/0001-00</p>
+    </div>
+  </footer>
+</body>
+</html>

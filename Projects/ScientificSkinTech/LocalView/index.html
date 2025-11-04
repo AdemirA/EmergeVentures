@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Skin Tech — Tecnologia BioSkin®</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-red:#c4170c;
+      --brand-red-dark:#8a0f08;
+      --brand-red-light:#ff1744;
+      --ink:#1a1a1a;
+      --gold:#d4af37;
+      --cream:#faf8f5;
+    }
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body{
+      font-family:'Inter', Arial, sans-serif; 
+      color:var(--ink); 
+      background:#fff;
+      line-height:1.6;
+    }
+    
+    /* Navegação Premium */
+    .navbar{
+      background:rgba(255,255,255,0.98);
+      backdrop-filter:blur(10px);
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid rgba(196,23,12,0.1);
+      box-shadow:0 2px 20px rgba(0,0,0,0.05);
+    }
+    .brand-logo{
+      font-family:'Playfair Display', serif;
+      font-size:28px;
+      font-weight:900;
+      color:var(--brand-red);
+      letter-spacing:-0.5px;
+    }
+    .nav-links{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+    .nav-links a{
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:500;
+      font-size:14px;
+      letter-spacing:0.5px;
+      transition:color 0.3s;
+    }
+    .nav-links a:hover{color:var(--brand-red);}
+    
+    /* Hero Sofisticado */
+    .hero{
+      background:linear-gradient(135deg, var(--cream) 0%, #fff 100%);
+      padding:120px 40px 80px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      top:-50%;
+      right:-20%;
+      width:800px;
+      height:800px;
+      background:radial-gradient(circle, rgba(196,23,12,0.05) 0%, transparent 70%);
+      border-radius:50%;
+    }
+    .hero-inner{
+      max-width:1200px;
+      margin:0 auto;
+      position:relative;
+      z-index:2;
+    }
+    .hero-tag{
+      display:inline-block;
+      background:rgba(196,23,12,0.1);
+      color:var(--brand-red);
+      padding:8px 20px;
+      border-radius:30px;
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      margin-bottom:30px;
+    }
+    .headline{
+      font-family:'Playfair Display', serif;
+      font-size:clamp(42px, 6vw, 72px);
+      font-weight:900;
+      line-height:1.1;
+      color:var(--ink);
+      max-width:900px;
+      margin-bottom:30px;
+    }
+    .headline span{color:var(--brand-red);}
+    .dek{
+      max-width:700px;
+      color:#555;
+      font-size:20px;
+      line-height:1.7;
+      margin-bottom:40px;
+    }
+    .hero-cta{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:16px 36px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:15px;
+      transition:all 0.3s ease;
+      display:inline-block;
+    }
+    .btn-primary{
+      background:var(--brand-red);
+      color:#fff;
+      box-shadow:0 4px 20px rgba(196,23,12,0.3);
+    }
+    .btn-primary:hover{
+      background:var(--brand-red-dark);
+      transform:translateY(-2px);
+      box-shadow:0 6px 30px rgba(196,23,12,0.4);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--brand-red);
+      border:2px solid var(--brand-red);
+    }
+    .btn-secondary:hover{
+      background:var(--brand-red);
+      color:#fff;
+    }
+    
+    /* Seção de Features */
+    .features{
+      padding:100px 40px;
+      background:#fff;
+    }
+    .features-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .section-title{
+      font-family:'Playfair Display', serif;
+      font-size:48px;
+      font-weight:700;
+      text-align:center;
+      margin-bottom:60px;
+      color:var(--ink);
+    }
+    .features-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:40px;
+    }
+    .feature-card{
+      background:var(--cream);
+      padding:40px;
+      border-radius:20px;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.1);
+    }
+    .feature-icon{
+      width:60px;
+      height:60px;
+      background:linear-gradient(135deg, var(--brand-red), var(--brand-red-light));
+      border-radius:15px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      margin-bottom:20px;
+    }
+    .feature-title{
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:15px;
+      color:var(--ink);
+    }
+    .feature-description{
+      color:#666;
+      line-height:1.7;
+    }
+    
+    /* Sobre a Tecnologia */
+    .tech-section{
+      padding:100px 40px;
+      background:linear-gradient(135deg, var(--brand-red-dark) 0%, var(--brand-red) 100%);
+      color:#fff;
+    }
+    .tech-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+    .tech-content h2{
+      font-family:'Playfair Display', serif;
+      font-size:48px;
+      font-weight:700;
+      margin-bottom:30px;
+      line-height:1.2;
+    }
+    .tech-content p{
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:20px;
+      opacity:0.95;
+    }
+    .tech-stats{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:30px;
+      margin-top:40px;
+    }
+    .stat{
+      text-align:center;
+      padding:30px;
+      background:rgba(255,255,255,0.1);
+      border-radius:15px;
+      backdrop-filter:blur(10px);
+    }
+    .stat-number{
+      font-family:'Playfair Display', serif;
+      font-size:42px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    .stat-label{
+      font-size:14px;
+      opacity:0.9;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    
+    /* Produtos */
+    .products{
+      padding:100px 40px;
+      background:var(--cream);
+    }
+    .products-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:40px;
+    }
+    .product-card{
+      background:#fff;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:transform 0.3s ease;
+    }
+    .product-card:hover{
+      transform:translateY(-5px);
+    }
+    .product-image{
+      width:100%;
+      height:300px;
+      background:linear-gradient(135deg, #f5f5f5, #e0e0e0);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:48px;
+    }
+    .product-info{
+      padding:30px;
+    }
+    .product-name{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    .product-desc{
+      color:#666;
+      margin-bottom:20px;
+    }
+    .product-price{
+      font-size:24px;
+      font-weight:700;
+      color:var(--brand-red);
+    }
+    
+    /* CTA Final */
+    .cta-section{
+      background:linear-gradient(135deg, var(--ink) 0%, #2a2a2a 100%);
+      text-align:center;
+      padding:100px 40px;
+      color:#fff;
+    }
+    .cta-section h2{
+      font-family:'Playfair Display', serif;
+      font-size:48px;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+    .cta-section p{
+      font-size:20px;
+      margin-bottom:40px;
+      opacity:0.9;
+    }
+    
+    /* Footer */
+    footer{
+      background:var(--ink);
+      color:#999;
+      padding:60px 40px 30px;
+    }
+    .footer-content{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:40px;
+      margin-bottom:40px;
+    }
+    .footer-section h4{
+      color:#fff;
+      font-size:18px;
+      margin-bottom:20px;
+    }
+    .footer-section p, .footer-section a{
+      color:#999;
+      text-decoration:none;
+      display:block;
+      margin-bottom:10px;
+    }
+    .footer-section a:hover{color:var(--brand-red);}
+    .footer-bottom{
+      text-align:center;
+      padding-top:30px;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .navbar{padding:15px 20px;}
+      .nav-links{display:none;}
+      .hero{padding:80px 20px 60px;}
+      .tech-inner{grid-template-columns:1fr;}
+      .tech-stats{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navegação -->
+  <nav class="navbar">
+    <div class="brand-logo">Scientific Skin Tech</div>
+    <ul class="nav-links">
+      <li><a href="#tecnologia">Tecnologia</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">🧬 Biotecnologia Avançada</div>
+      <h1 class="headline">A tecnologia criada inspirada na <span>própria pele humana</span></h1>
+      <p class="dek">O Dr. Rafael Perin Arpini combina ciência regenerativa e expertise clínica para desenvolver dermocosméticos de alta performance com a exclusiva tecnologia BIOSKIN®.</p>
+      <div class="hero-cta">
+        <a href="#produtos" class="btn btn-primary">Conheça os Produtos</a>
+        <a href="#tecnologia" class="btn btn-secondary">Saiba Mais</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="tecnologia">
+    <div class="features-inner">
+      <h2 class="section-title">O Poder da BioSkin®</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3 class="feature-title">Defesa Natural</h3>
+          <p class="feature-description">Ativa os mecanismos naturais de defesa da pele, fortalecendo a barreira cutânea contra agressores externos.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💧</div>
+          <h3 class="feature-title">Hidratação Profunda</h3>
+          <p class="feature-description">Sistema inteligente que mantém os níveis ideais de hidratação, promovendo uma pele macia e saudável.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3 class="feature-title">Regeneração Celular</h3>
+          <p class="feature-description">Estimula a renovação celular e a produção de colágeno para uma pele mais firme e jovem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tecnologia -->
+  <section class="tech-section">
+    <div class="tech-inner">
+      <div class="tech-content">
+        <h2>Tecnologia BIOSKIN® Exclusiva</h2>
+        <p>Um complexo inteligente de ativos que trabalha em sinergia com a pele, respeitando sua biologia natural. Nossa formulação une ciência de ponta e ingredientes cuidadosamente selecionados.</p>
+        <p>Desenvolvida pelo Dr. Rafael Arpini, médico e pesquisador especializado em dermatologia regenerativa, a BIOSKIN® representa anos de pesquisa e inovação.</p>
+        <div class="tech-stats">
+          <div class="stat">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Satisfação</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">30 dias</div>
+            <div class="stat-label">Resultados Visíveis</div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-visual">
+        <div style="width:100%;height:400px;background:rgba(255,255,255,0.1);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:80px;">🧪</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section class="products" id="produtos">
+    <div class="products-inner">
+      <h2 class="section-title">Linha de Alta Performance</h2>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">💎</div>
+          <div class="product-info">
+            <h3 class="product-name">Pele de Porcelana</h3>
+            <p class="product-desc">Sérum luminosidade e uniformização do tom</p>
+            <div class="product-price">R$ 189,90</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">✨</div>
+          <div class="product-info">
+            <h3 class="product-name">Firmeza Absoluta</h3>
+            <p class="product-desc">Tratamento intensivo anti-idade</p>
+            <div class="product-price">R$ 199,90</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">🌟</div>
+          <div class="product-info">
+            <h3 class="product-name">Hydra Plus</h3>
+            <p class="product-desc">Hidratação profunda e duradoura</p>
+            <div class="product-price">R$ 179,90</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Transforme sua Rotina de Skincare</h2>
+    <p>Descubra a ciência por trás da beleza natural</p>
+    <a href="https://scientificskintech.com.br" class="btn btn-primary">Comprar Agora</a>
+  </section>
+
+  <!-- Footer -->
+  <footer id="sobre">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Scientific Skin Tech</h4>
+        <p>Dermocosméticos de alta performance desenvolvidos com ciência regenerativa.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Rápidos</h4>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre Nós</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>contato@scientificskintech.com.br</p>
+        <p>@scientificskintech</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Scientific Skin Tech. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

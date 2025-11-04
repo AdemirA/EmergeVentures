@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petvi — Prolongando a Vida Saudável dos Pets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-blue:#0066cc;
+      --brand-blue-dark:#004080;
+      --brand-blue-light:#40a9ff;
+      --accent-orange:#ff8f3d;
+      --accent-green:#52c41a;
+      --cream:#fff8f0;
+      --ink:#1a1a1a;
+    }
+    *{margin:0; padding:0; box-sizing:border-box;}
+    body{
+      font-family:'Poppins', sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    
+    /* Navbar */
+    .navbar{
+      background:rgba(255,255,255,0.98);
+      backdrop-filter:blur(10px);
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 20px rgba(0,102,204,0.1);
+    }
+    .brand-logo{
+      font-family:'Fredoka', sans-serif;
+      font-size:32px;
+      font-weight:700;
+      color:var(--brand-blue);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .nav-menu{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+    .nav-menu a{
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:500;
+      transition:color 0.3s;
+    }
+    .nav-menu a:hover{color:var(--brand-blue);}
+    
+    /* Hero */
+    .hero{
+      background:linear-gradient(135deg, var(--cream) 0%, #e6f7ff 100%);
+      padding:100px 40px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'🐾';
+      position:absolute;
+      font-size:400px;
+      opacity:0.05;
+      top:-100px;
+      right:-100px;
+      transform:rotate(-15deg);
+    }
+    .hero-inner{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .hero-content{}
+    .hero-tag{
+      display:inline-block;
+      background:var(--brand-blue);
+      color:#fff;
+      padding:8px 20px;
+      border-radius:30px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:20px;
+      letter-spacing:0.5px;
+    }
+    .hero-title{
+      font-family:'Fredoka', sans-serif;
+      font-size:clamp(36px, 5vw, 64px);
+      font-weight:700;
+      line-height:1.1;
+      color:var(--ink);
+      margin-bottom:24px;
+    }
+    .hero-title .highlight{
+      color:var(--brand-blue);
+      position:relative;
+    }
+    .hero-description{
+      font-size:20px;
+      color:#555;
+      margin-bottom:32px;
+      line-height:1.7;
+    }
+    .hero-stats{
+      display:flex;
+      gap:40px;
+      margin-bottom:32px;
+    }
+    .stat-item{
+      text-align:center;
+    }
+    .stat-number{
+      font-family:'Fredoka', sans-serif;
+      font-size:36px;
+      font-weight:700;
+      color:var(--brand-blue);
+    }
+    .stat-label{
+      font-size:14px;
+      color:#666;
+    }
+    .hero-buttons{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:14px 32px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:15px;
+      transition:all 0.3s ease;
+      display:inline-block;
+    }
+    .btn-primary{
+      background:var(--brand-blue);
+      color:#fff;
+      box-shadow:0 4px 20px rgba(0,102,204,0.3);
+    }
+    .btn-primary:hover{
+      background:var(--brand-blue-dark);
+      transform:translateY(-2px);
+      box-shadow:0 6px 30px rgba(0,102,204,0.4);
+    }
+    .btn-secondary{
+      background:#fff;
+      color:var(--brand-blue);
+      border:2px solid var(--brand-blue);
+    }
+    .btn-secondary:hover{
+      background:var(--brand-blue);
+      color:#fff;
+    }
+    .hero-visual{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero-image{
+      width:100%;
+      max-width:500px;
+      height:500px;
+      background:linear-gradient(135deg, var(--brand-blue-light), var(--brand-blue));
+      border-radius:30px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:120px;
+      box-shadow:0 20px 60px rgba(0,102,204,0.2);
+      animation:float 3s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%, 100%{transform:translateY(0);}
+      50%{transform:translateY(-20px);}
+    }
+    
+    /* Produtos */
+    .products{
+      padding:100px 40px;
+      background:#fff;
+    }
+    .products-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .section-header{
+      text-align:center;
+      margin-bottom:60px;
+    }
+    .section-tag{
+      display:inline-block;
+      color:var(--brand-blue);
+      font-weight:600;
+      font-size:14px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .section-title{
+      font-family:'Fredoka', sans-serif;
+      font-size:48px;
+      font-weight:700;
+      color:var(--ink);
+      margin-bottom:16px;
+    }
+    .section-description{
+      font-size:18px;
+      color:#666;
+      max-width:700px;
+      margin:0 auto;
+    }
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:32px;
+    }
+    .product-card{
+      background:var(--cream);
+      border-radius:24px;
+      overflow:hidden;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+      position:relative;
+    }
+    .product-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.1);
+    }
+    .product-badge{
+      position:absolute;
+      top:20px;
+      right:20px;
+      background:var(--accent-green);
+      color:#fff;
+      padding:6px 16px;
+      border-radius:20px;
+      font-size:12px;
+      font-weight:600;
+      z-index:2;
+    }
+    .product-image{
+      height:280px;
+      background:linear-gradient(135deg, #f0f0f0, #e0e0e0);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:80px;
+    }
+    .product-content{
+      padding:30px;
+    }
+    .product-name{
+      font-family:'Fredoka', sans-serif;
+      font-size:24px;
+      font-weight:600;
+      margin-bottom:12px;
+      color:var(--ink);
+    }
+    .product-description{
+      color:#666;
+      margin-bottom:20px;
+      line-height:1.6;
+    }
+    .product-footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .product-price{
+      font-family:'Fredoka', sans-serif;
+      font-size:28px;
+      font-weight:700;
+      color:var(--brand-blue);
+    }
+    .product-link{
+      color:var(--brand-blue);
+      text-decoration:none;
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    
+    /* Benefícios */
+    .benefits{
+      padding:100px 40px;
+      background:linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-blue-dark) 100%);
+      color:#fff;
+    }
+    .benefits-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .benefits-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:40px;
+      margin-top:60px;
+    }
+    .benefit-item{
+      text-align:center;
+      padding:40px 30px;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      border-radius:20px;
+      transition:transform 0.3s ease;
+    }
+    .benefit-item:hover{
+      transform:translateY(-10px);
+    }
+    .benefit-icon{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+    .benefit-title{
+      font-family:'Fredoka', sans-serif;
+      font-size:20px;
+      font-weight:600;
+      margin-bottom:12px;
+    }
+    .benefit-description{
+      opacity:0.9;
+      line-height:1.6;
+    }
+    
+    /* Testemunhos */
+    .testimonials{
+      padding:100px 40px;
+      background:var(--cream);
+    }
+    .testimonials-inner{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .testimonials-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:32px;
+      margin-top:60px;
+    }
+    .testimonial-card{
+      background:#fff;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.05);
+    }
+    .testimonial-rating{
+      color:var(--accent-orange);
+      font-size:20px;
+      margin-bottom:16px;
+    }
+    .testimonial-text{
+      color:#555;
+      line-height:1.7;
+      margin-bottom:24px;
+      font-style:italic;
+    }
+    .testimonial-author{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .author-avatar{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      background:var(--brand-blue-light);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+    }
+    .author-info{}
+    .author-name{
+      font-weight:600;
+      margin-bottom:4px;
+    }
+    .author-pet{
+      font-size:14px;
+      color:#999;
+    }
+    
+    /* CTA */
+    .cta{
+      padding:100px 40px;
+      background:linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color:#fff;
+      text-align:center;
+    }
+    .cta h2{
+      font-family:'Fredoka', sans-serif;
+      font-size:48px;
+      font-weight:700;
+      margin-bottom:24px;
+    }
+    .cta p{
+      font-size:20px;
+      opacity:0.9;
+      margin-bottom:40px;
+    }
+    
+    /* Footer */
+    footer{
+      background:var(--ink);
+      color:#999;
+      padding:60px 40px 30px;
+    }
+    .footer-content{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:40px;
+      margin-bottom:40px;
+    }
+    .footer-section h4{
+      color:#fff;
+      font-family:'Fredoka', sans-serif;
+      font-size:20px;
+      margin-bottom:20px;
+    }
+    .footer-section p, .footer-section a{
+      color:#999;
+      text-decoration:none;
+      display:block;
+      margin-bottom:12px;
+      transition:color 0.3s;
+    }
+    .footer-section a:hover{color:var(--brand-blue);}
+    .footer-bottom{
+      text-align:center;
+      padding-top:30px;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .navbar{padding:15px 20px;}
+      .nav-menu{display:none;}
+      .hero{padding:60px 20px;}
+      .hero-inner{grid-template-columns:1fr;}
+      .hero-image{max-width:100%; height:400px;}
+      .products, .benefits, .testimonials, .cta{padding:60px 20px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="brand-logo">🐾 Petvi</div>
+    <ul class="nav-menu">
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">🏆 Líder em Suplementação Pet no Brasil</div>
+        <h1 class="hero-title">Prolongando a <span class="highlight">vida saudável</span> dos seus pets</h1>
+        <p class="hero-description">Produtos de alta qualidade cientificamente desenvolvidos para atender às necessidades de saúde e bem-estar dos animais de estimação.</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">200k+</div>
+            <div class="stat-label">Pets Atendidos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">#1</div>
+            <div class="stat-label">E-commerce Brasil</div>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#produtos" class="btn btn-primary">Ver Produtos</a>
+          <a href="#beneficios" class="btn btn-secondary">Saiba Mais</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image">🐕</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section class="products" id="produtos">
+    <div class="products-inner">
+      <div class="section-header">
+        <div class="section-tag">Nossos Produtos</div>
+        <h2 class="section-title">Saúde e Vitalidade para Seu Pet</h2>
+        <p class="section-description">Linha completa de suplementos desenvolvidos com os melhores ingredientes para garantir qualidade de vida aos seus companheiros.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-badge">Mais Vendido</div>
+          <div class="product-image">🦴</div>
+          <div class="product-content">
+            <h3 class="product-name">Longevi</h3>
+            <p class="product-description">Suplemento premium para longevidade e vitalidade. Fórmula exclusiva com antioxidantes e vitaminas essenciais.</p>
+            <div class="product-footer">
+              <div class="product-price">R$ 129</div>
+              <a href="#" class="product-link">Ver mais →</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">💪</div>
+          <div class="product-content">
+            <h3 class="product-name">Condropure</h3>
+            <p class="product-description">Suporte completo para articulações e cartilagens. Ideal para pets em idade avançada ou atletas.</p>
+            <div class="product-footer">
+              <div class="product-price">R$ 149</div>
+              <a href="#" class="product-link">Ver mais →</a>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badge">Novidade</div>
+          <div class="product-image">🐟</div>
+          <div class="product-content">
+            <h3 class="product-name">Atlantis</h3>
+            <p class="product-description">Ômega 3 premium para pelagem brilhante e saúde cardiovascular. Pureza certificada.</p>
+            <div class="product-footer">
+              <div class="product-price">R$ 139</div>
+              <a href="#" class="product-link">Ver mais →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section class="benefits" id="beneficios">
+    <div class="benefits-inner">
+      <div class="section-header">
+        <div class="section-tag" style="color:rgba(255,255,255,0.8)">Por que escolher Petvi</div>
+        <h2 class="section-title">Compromisso com a Saúde Animal</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">🔬</div>
+          <h3 class="benefit-title">Cientificamente Formulado</h3>
+          <p class="benefit-description">Desenvolvido com base em pesquisas veterinárias avançadas</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">✅</div>
+          <h3 class="benefit-title">Qualidade Premium</h3>
+          <p class="benefit-description">Ingredientes selecionados e testados rigorosamente</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🏆</div>
+          <h3 class="benefit-title">Líder de Mercado</h3>
+          <p class="benefit-description">Marca mais confiável no e-commerce brasileiro</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">💚</div>
+          <h3 class="benefit-title">Resultados Comprovados</h3>
+          <p class="benefit-description">Mais de 200 mil pets atendidos com sucesso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testemunhos -->
+  <section class="testimonials" id="depoimentos">
+    <div class="testimonials-inner">
+      <div class="section-header">
+        <div class="section-tag">Depoimentos</div>
+        <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"O Longevi mudou a vida do meu cachorro. Ele está mais ativo e feliz aos 12 anos!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <div class="author-name">Ana Silva</div>
+              <div class="author-pet">Thor, Golden Retriever</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Condropure ajudou muito com os problemas de articulação da minha pet. Recomendo!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <div class="author-name">Carlos Mendes</div>
+              <div class="author-pet">Luna, Labrador</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Produtos de altíssima qualidade. A pelagem do meu gato nunca esteve tão bonita!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👤</div>
+            <div class="author-info">
+              <div class="author-name">Mariana Costa</div>
+              <div class="author-pet">Mimi, Persa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Cuide da Saúde do Seu Pet</h2>
+    <p>Descubra a diferença que produtos de qualidade podem fazer</p>
+    <a href="https://petvi.com.br" class="btn btn-primary">Comprar Agora</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Petvi</h4>
+        <p>Líder em suplementação para pets no Brasil. Compromisso com a saúde e longevidade dos animais.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Produtos</h4>
+        <a href="#">Longevi</a>
+        <a href="#">Condropure</a>
+        <a href="#">Atlantis</a>
+      </div>
+      <div class="footer-section">
+        <h4>Empresa</h4>
+        <a href="#">Sobre Nós</a>
+        <a href="#">Blog</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>contato@petvi.com.br</p>
+        <p>@petvi.oficial</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Petvi. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

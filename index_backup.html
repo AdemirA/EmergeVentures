@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emerge Ventures - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --sst: #c4170c;
+      --petvi: #0066cc;
+      --vhita: #00c853;
+      --gold: #d4af37;
+      --cream: #faf8f5;
+      --dark: #1a1a1a;
+      --gray: #666;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    /* Header Elegante */
+    .header {
+      background: #fff;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 30px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 40px;
+    }
+    
+    .nav a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav a:hover {
+      color: var(--dark);
+    }
+    
+    /* Hero Minimalista */
+    .hero {
+      padding: 100px 60px 80px;
+      background: var(--cream);
+      text-align: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-subtitle {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 56px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    .hero-description {
+      font-size: 18px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+    
+    /* Seções */
+    .section {
+      padding: 100px 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      margin-bottom: 60px;
+    }
+    
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 42px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+    
+    /* Orçamento - Cards Elegantes */
+    .budget-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    
+    .budget-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 40px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .budget-card:hover {
+      border-color: rgba(0,0,0,0.15);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transform: translateY(-5px);
+    }
+    
+    .budget-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--dark);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .budget-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .budget-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    
+    .budget-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--dark);
+    }
+    
+    .budget-description {
+      color: var(--gray);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    
+    .budget-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    
+    .budget-label {
+      font-size: 13px;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Projetos - Lista Elegante */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    
+    .project-item {
+      background: #fff;
+      padding: 50px 60px;
+      display: grid;
+      grid-template-columns: 80px 1fr 200px 150px;
+      gap: 40px;
+      align-items: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .project-item:hover {
+      background: var(--cream);
+      padding-left: 70px;
+    }
+    
+    .project-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: rgba(0,0,0,0.15);
+    }
+    
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .project-category {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      font-weight: 500;
+    }
+    
+    .project-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    
+    .project-description {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    
+    .project-status {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00c853;
+    }
+    
+    .project-actions {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border: 1px solid rgba(0,0,0,0.15);
+      background: transparent;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.3s;
+      letter-spacing: 0.5px;
+      display: inline-block;
+    }
+    
+    .btn:hover {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+    }
+    
+    .btn-primary {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+    }
+    
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--dark);
+    }
+    
+    /* Footer Minimalista */
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      padding: 60px 60px 40px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .footer-text {
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+    
+    .footer-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: #fff;
+    }
+    
+    /* Categoria Badge */
+    .category-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(0,0,0,0.05);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+    
+    .category-badge.biotech {
+      background: rgba(196,23,12,0.1);
+      color: var(--sst);
+    }
+    
+    .category-badge.petcare {
+      background: rgba(0,102,204,0.1);
+      color: var(--petvi);
+    }
+    
+    .category-badge.wellness {
+      background: rgba(0,200,83,0.1);
+      color: var(--vhita);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .header, .hero, .section, .footer {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      
+      .budget-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-item {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+      }
+      
+      .project-item:hover {
+        padding-left: 30px;
+      }
+      
+      .project-number {
+        font-size: 32px;
+      }
+      
+      .nav {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 42px;
+      }
+      
+      .section-title {
+        font-size: 36px;
+      }
+    }
+    
+    /* Animações Suaves */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .budget-card, .project-item {
+      animation: fadeIn 0.6s ease forwards;
+      opacity: 0;
+    }
+    
+    .budget-card:nth-child(1) { animation-delay: 0.1s; }
+    .budget-card:nth-child(2) { animation-delay: 0.2s; }
+    .budget-card:nth-child(3) { animation-delay: 0.3s; }
+    
+    .project-item:nth-child(1) { animation-delay: 0.1s; }
+    .project-item:nth-child(2) { animation-delay: 0.2s; }
+    .project-item:nth-child(3) { animation-delay: 0.3s; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">Emerge Ventures</div>
+      <nav class="nav">
+        <a href="#orcamento">Orçamento</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Portfolio 2025</p>
+      <h1 class="hero-title">Marcas que Transformam Vidas</h1>
+      <p class="hero-description">
+        Três empresas inovadoras focadas em longevidade, qualidade e ciência. 
+        Conheça nossos projetos e o impacto que estamos gerando.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section class="section" id="projetos">
+    <div class="section-header">
+      <h2 class="section-title">Nossos Projetos</h2>
+      <p class="section-subtitle">
+        Três marcas inovadoras focadas em longevidade, qualidade e ciência
+      </p>
+    </div>
+    
+    <div class="projects-list">
+      <div class="budget-card">
+        <div class="budget-icon">💻</div>
+        <h3 class="budget-title">Desenvolvimento Digital</h3>
+        <p class="budget-description">
+          Setup completo de e-commerce, desenvolvimento de temas customizados 
+          e integrações necessárias para as três marcas.
+        </p>
+        <div class="budget-value">R$ 21.687</div>
+        <div class="budget-label">Investimento Inicial</div>
+      </div>
+      
+      <div class="budget-card">
+        <div class="budget-icon">📊</div>
+        <h3 class="budget-title">Marketing Digital</h3>
+        <p class="budget-description">
+          Setup inicial de SEO, campanhas e estratégias de marketing digital 
+          para lançamento das marcas.
+        </p>
+        <div class="budget-value">R$ 4.500</div>
+        <div class="budget-label">Setup Inicial</div>
+      </div>
+      
+      <div class="budget-card">
+        <div class="budget-icon">🔄</div>
+        <h3 class="budget-title">Custos Recorrentes</h3>
+        <p class="budget-description">
+          Manutenção mensal incluindo Shopify, apps, ferramentas de analytics 
+          e gestão de marketing digital.
+        </p>
+        <div class="budget-value">R$ 2.387</div>
+        <div class="budget-label">Mensal</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orçamento (MOVIDO PARA DEPOIS) -->
+  <section class="section" id="orcamento" style="background: var(--cream);">
+    <div class="section-header">
+      <h2 class="section-title">Investimento</h2>
+      <p class="section-subtitle">
+        Estrutura de custos para implementação completa
+      </p>
+    </div>
+    
+    <div class="budget-grid">
+      <div class="budget-card">
+        <div class="budget-icon">💻</div>
+        <h3 class="budget-title">Desenvolvimento Digital</h3>
+        <p class="budget-description">
+          Setup completo de e-commerce, desenvolvimento de temas customizados 
+          e integrações necessárias para as três marcas.
+        </p>
+        <div class="budget-value">R$ 21.687</div>
+        <div class="budget-label">Investimento Inicial</div>
+      </div>
+      
+      <div class="budget-card">
+        <div class="budget-icon">📊</div>
+        <h3 class="budget-title">Marketing Digital</h3>
+        <p class="budget-description">
+          Setup inicial de SEO, campanhas e estratégias de marketing digital 
+          para lançamento das marcas.
+        </p>
+        <div class="budget-value">R$ 4.500</div>
+        <div class="budget-label">Setup Inicial</div>
+      </div>
+      
+      <div class="budget-card">
+        <div class="budget-icon">🔄</div>
+        <h3 class="budget-title">Custos Recorrentes</h3>
+        <p class="budget-description">
+          Manutenção mensal incluindo Shopify, apps, ferramentas de analytics 
+          e gestão de marketing digital.
+        </p>
+        <div class="budget-value">R$ 2.387</div>
+        <div class="budget-label">Mensal</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">© 2025 Emerge Ventures. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="#projetos">Projetos</a>
+        <a href="#orcamento">Orçamento</a>
+        <a href="RELATORIO_EXECUTIVO.md">Relatório</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+      <div class="project-item" onclick="window.location.href='Projects/ScientificSkinTech/LocalView/index.html'">
+        <div class="project-number">01</div>
+        <div class="project-info">
+          <div class="category-badge biotech">Biotecnologia</div>
+          <h3 class="project-name">Scientific Skin Tech</h3>
+          <p class="project-description">
+            Dermocosméticos de alta performance com tecnologia BIOSKIN® exclusiva. 
+            Ciência regenerativa aplicada ao cuidado da pele.
+          </p>
+        </div>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          <span>Ativo</span>
+        </div>
+        <div class="project-actions">
+          <a href="Projects/ScientificSkinTech/LocalView/index.html" class="btn btn-primary" onclick="event.stopPropagation()">Ver Projeto</a>
+        </div>
+      </div>
+      
+      <!-- Petvi -->
+      <div class="project-item" onclick="window.location.href='Projects/Petvi/LocalView/index.html'">
+        <div class="project-number">02</div>
+        <div class="project-info">
+          <div class="category-badge petcare">Pet Care</div>
+          <h3 class="project-name">Petvi</h3>
+          <p class="project-description">
+            Líder em suplementação pet no Brasil. Produtos de alta qualidade 
+            para prolongar a vida saudável dos animais de estimação.
+          </p>
+        </div>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          <span>Ativo</span>
+        </div>
+        <div class="project-actions">
+          <a href="Projects/Petvi/LocalView/index.html" class="btn btn-primary" onclick="event.stopPropagation()">Ver Projeto</a>
+        </div>
+      </div>
+      
+      <!-- Vhita -->
+      <div class="project-item" onclick="window.location.href='Projects/Vhita/LocalView/index.html'">
+        <div class="project-number">03</div>
+        <div class="project-info">
+          <div class="category-badge wellness">Wellness</div>
+          <h3 class="project-name">Vhita</h3>
+          <p class="project-description">
+            Suplementos premium com certificações internacionais. 
+            Dedicados à promoção de saúde e longevidade.
+          </p>
+        </div>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          <span>Ativo</span>
+        </div>
+        <div class="project-actions">
+          <a href="Projects/Vhita/LocalView/index.html" class="btn btn-primary" onclick="event.stopPropagation()">Ver Projeto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">© 2025 Emerge Ventures. Todos os direitos reservados.</p>
+      <div class="footer-links">
+        <a href="#orcamento">Orçamento</a>
+        <a href="#projetos">Projetos</a>
+        <a href="RELATORIO_EXECUTIVO.md">Relatório</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

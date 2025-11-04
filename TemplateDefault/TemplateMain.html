@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Skin Tech — Tecnologia BioSkin®</title>
+  <style>
+    :root{
+      --brand-red:#c4170c; /* estilo g1 */
+      --brand-red-dark:#a31209;
+      --ink:#222;
+      --gold:#ffc27a;
+    }
+    body{font-family:'Inter', Arial, sans-serif; color:var(--ink); margin:0; background:#fff}
+    /* Header estilo g1 */
+    .topbar{background:var(--brand-red); color:#fff; padding:12px 20px; display:flex; align-items:center; gap:18px; position:sticky; top:0; z-index:20}
+    .hamburger{width:26px; height:20px; position:relative; cursor:pointer}
+    .hamburger span{position:absolute; left:0; right:0; height:3px; background:#fff; border-radius:2px}
+    .hamburger span:nth-child(1){top:0}
+    .hamburger span:nth-child(2){top:8.5px}
+    .hamburger span:nth-child(3){bottom:0}
+    .g1logo{font-weight:800; font-size:28px; letter-spacing:-0.5px}
+    .divider{width:1px; height:24px; background:rgba(255,255,255,.35)}
+    .brand-name{font-weight:700}
+    .search{margin-left:auto; display:flex; align-items:center; gap:10px; background:rgba(255,255,255,.15); padding:8px 12px; border-radius:8px}
+    .search input{border:none; outline:none; background:transparent; color:#fff; width:220px}
+    .search input::placeholder{color:rgba(255,255,255,.85)}
+    /* faixa de seção */
+    .sectionbar{background:var(--brand-red-dark); color:#fff; text-align:center; padding:10px 12px; letter-spacing:.08em; font-weight:700}
+
+    /* Hero */
+    .hero{background:#f4f4f4; padding:48px 20px 32px}
+    .hero-inner{max-width:1100px; margin:0 auto}
+    .headline{font-size:44px; font-weight:800; line-height:1.15; color:#101010; max-width:900px}
+    .dek{max-width:800px; color:#555; font-size:18px; margin-top:14px}
+    .byline{margin-top:24px; color:#777; font-size:14px}
+    .top-placeholder{background:#bdbdbd; width:100%; height:420px; border-radius:8px; margin:28px 0}
+    .share{display:flex; gap:14px}
+    .share a{text-decoration:none; color:var(--brand-red); font-weight:700}
+
+    article{max-width:850px; margin:0 auto; padding:40px 20px; line-height:1.7}
+    article h2{font-size:28px; color:#111; margin-top:52px}
+    article p{font-size:18px; color:#444; margin-bottom:22px}
+    article ul{padding-left:20px}
+    .quote{border-left:4px solid var(--brand-red); padding-left:16px; font-style:italic; color:#555; margin:22px 0}
+    figure{margin:34px 0; text-align:center}
+    .ph{background:#e0e0e0; width:100%; max-width:700px; height:340px; border-radius:10px; margin:0 auto}
+    figcaption{font-size:14px; color:#777; margin-top:8px}
+
+    .cta-section{background:#fff5f0; text-align:center; padding:54px 20px; border-radius:10px; margin:70px auto;}
+    .cta-section h3{font-size:26px; color:var(--brand-red); margin-bottom:12px}
+    .cta-section p{color:#555; max-width:650px; margin:0 auto 24px}
+    .cta-button{background:var(--brand-red); color:#fff; padding:16px 30px; border-radius:8px; text-decoration:none; font-weight:700}
+
+    footer{background:#111; color:#ddd; text-align:center; padding:36px 20px; font-size:14px}
+    footer a{color:var(--gold); text-decoration:none}
+  </style>
+</head>
+<body>
+  <!-- Header G1-like -->
+  <div class="topbar">
+    <div class="hamburger" aria-label="menu"><span></span><span></span><span></span></div>
+    <div class="g1logo">g1</div>
+    <div class="divider"></div>
+    <div class="brand-name">Scientific Skin Tech</div>
+    <div class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7" stroke="white" stroke-width="2"/><path d="M20 20L16.5 16.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      <input placeholder="BUSCAR" />
+    </div>
+  </div>
+  <div class="sectionbar">DERMATOLOGIA</div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="headline">A tecnologia criada inspirada na própria pele humana</h1>
+      <p class="dek">O Dr. Rafael Arpini e a Scientific Skin Tech estão transformando o cuidado com a pele por meio da biotecnologia e da ciência regenerativa.</p>
+      <div class="byline">Por Dr. Rafael Arpini — Dermatologista e fundador da Scientific Skin Tech</div>
+      <div class="top-placeholder"></div>
+      <div class="share">
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+        <a href="#">Compartilhar</a>
+      </div>
+    </div>
+  </section>
+
+  <article>
+    <h2>O poder da BioSkin®</h2>
+    <p>A <strong>BioSkin®</strong> é uma tecnologia biomimética e regenerativa desenvolvida pelo Dr. Rafael Arpini. Inspirada na biotecnologia, ela imita os mecanismos naturais da pele, estimulando suas funções biológicas de defesa, hidratação e regeneração. O resultado é um processo de cuidado que desperta a inteligência natural do corpo — permitindo que a pele se restaure de dentro para fora.</p>
+    <div class="quote">“Sua pele já sabe o que fazer. A BioSkin® apenas ativa esse poder.” — Dr. Rafael Arpini</div>
+
+    <figure>
+      <div class="ph"></div>
+      <figcaption>Dr. Rafael Arpini em seu laboratório, onde a tecnologia BioSkin® foi desenvolvida.</figcaption>
+    </figure>
+
+    <h2>Como funciona a BioSkin®</h2>
+    <p>A pele é um sistema inteligente, mas fatores como o envelhecimento, o estresse e a poluição reduzem sua capacidade natural de regeneração. A BioSkin® foi desenvolvida para reativar esse poder, estimulando a comunicação celular e reparando a estrutura cutânea de forma contínua e segura.</p>
+    <ul>
+      <li><strong>Prebióticos:</strong> fortalecem a microbiota e a barreira protetora</li>
+      <li><strong>Aminoácidos:</strong> restauram a hidratação profunda</li>
+      <li><strong>Lipídios biomiméticos:</strong> imitam a estrutura natural da pele</li>
+      <li><strong>Peptídeos bioativos:</strong> estimulam colágeno e elastina, promovendo firmeza e regeneração</li>
+    </ul>
+
+    <figure>
+      <div class="ph"></div>
+      <figcaption>Estudos clínicos mostram melhora significativa na textura e luminosidade da pele após 30 dias.</figcaption>
+    </figure>
+
+    <h2>Por que a BioSkin® é diferente</h2>
+    <p>Enquanto a maioria dos cosméticos atua apenas na superfície, a BioSkin® foi desenvolvida para <strong>conversar com a pele em nível celular</strong>, ativando seus processos internos de reparação e defesa. Essa abordagem biomimética faz com que a tecnologia se integre naturalmente ao tecido cutâneo, promovendo resultados reais e duradouros.</p>
+    <ul>
+      <li>Atua em sinergia com os processos naturais da pele</li>
+      <li>Eficácia e segurança comprovadas</li>
+      <li>Compatível com todos os tipos de pele</li>
+      <li>Resultados visíveis em poucas semanas</li>
+      <li>Desenvolvida por um médico especialista</li>
+    </ul>
+
+    <h2>Resultados comprovados</h2>
+    <p>Relatos clínicos e testes realizados pela Scientific Skin Tech apontam que a BioSkin® proporciona:</p>
+    <ul>
+      <li>Textura e luminosidade visivelmente melhoradas</li>
+      <li>Redução de linhas finas e poros dilatados</li>
+      <li>Equilíbrio da oleosidade e hidratação</li>
+      <li>Sensação de firmeza e vitalidade renovada</li>
+    </ul>
+
+    <figure>
+      <div class="ph"></div>
+      <figcaption>Resultados reais após 30 dias de uso contínuo da tecnologia BioSkin®.</figcaption>
+    </figure>
+
+    <h2>A história por trás da inovação</h2>
+    <p>O Dr. Rafael Arpini sempre acreditou que a pele é um sistema vivo — e que, ao entender sua biologia, é possível desenvolver soluções que respeitam e potencializam seu funcionamento natural. Foi com essa visão que nasceu a <strong>Scientific Skin Tech</strong>, empresa que une biotecnologia e ciência regenerativa para criar produtos com resultados reais.</p>
+
+    <figure>
+      <div class="ph"></div>
+      <figcaption>Dr. Rafael Arpini em entrevista sobre biotecnologia aplicada à dermatologia.</figcaption>
+    </figure>
+  </article>
+
+  <section class="cta-section">
+    <h3>Transforme sua rotina de cuidados com a pele</h3>
+    <p>Descubra a linha completa de produtos com tecnologia <strong>BioSkin®</strong> e sinta sua pele mais viva, firme e luminosa.</p>
+    <a href="https://scientificskintech.com.br/products/pele-de-porcelana-1?variant=50080877248834" class="cta-button">CONHEÇA A LINHA BIOSKIN®</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Scientific Skin Tech — Desenvolvido pelo Dr. Rafael Arpini. Inspirado em ciência e biotecnologia para revelar o poder natural da sua pele. | <a href="#">Política de Privacidade</a></p>
+  </footer>
+</body>
+</html>
