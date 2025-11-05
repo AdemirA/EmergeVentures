@@ -2,8 +2,10 @@
   "name": "emergevetures",
   "version": "1.0.0",
   "description": "> Uma nova geração de marcas de consumo que estão redefinindo suas categorias.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
     "deploy": "firebase deploy --only hosting",
     "deploy:preview": "firebase hosting:channel:deploy preview",
     "test": "echo \"Error: no test specified\" && exit 1"
