@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioSkin® vs Fórmulas Internacionais | Scientific Skin Tech</title>
+  <meta name="description" content="Por que a tecnologia brasileira está superando as fórmulas internacionais em resultados reais de pele">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #c4170c;
+      --dark: #1a1a1a;
+      --gray: #666;
+      --light-gray: #f5f5f5;
+      --border: #e5e5e5;
+      --success: #00a86b;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: #fff;
+    }
+    
+    /* Header */
+    .header {
+      background: #fff;
+      padding: 20px 30px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.95);
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+    
+    .header-cta {
+      padding: 10px 24px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .header-cta:hover {
+      background: #a01309;
+      transform: translateY(-2px);
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+    
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #faf8f5 0%, #fff 100%);
+      padding: 80px 0 100px;
+      text-align: center;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      color: var(--dark);
+      letter-spacing: -1px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .subtitle {
+      font-size: 22px;
+      line-height: 1.5;
+      color: var(--gray);
+      max-width: 750px;
+      margin: 0 auto 50px;
+      font-weight: 400;
+    }
+    
+    /* Section */
+    .section {
+      padding: 100px 0;
+    }
+    
+    .section-dark {
+      background: var(--dark);
+      color: #fff;
+    }
+    
+    .section-light {
+      background: var(--light-gray);
+    }
+    
+    .section-number {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 30px;
+      letter-spacing: -0.5px;
+    }
+    
+    .section-intro {
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--gray);
+      margin-bottom: 60px;
+      max-width: 800px;
+    }
+    
+    .section-dark .section-intro,
+    .section-dark h2 {
+      color: #fff;
+    }
+    
+    .section-dark .section-intro {
+      color: rgba(255,255,255,0.8);
+    }
+    
+    /* Comparison Table */
+    .comparison-table {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+    
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .comparison-table th {
+      background: var(--dark);
+      color: #fff;
+      padding: 20px 30px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .comparison-table th:first-child {
+      width: 25%;
+      background: var(--primary);
+    }
+    
+    .comparison-table th:nth-child(2) {
+      background: #888;
+    }
+    
+    .comparison-table th:last-child {
+      background: var(--success);
+    }
+    
+    .comparison-table td {
+      padding: 25px 30px;
+      border-bottom: 1px solid var(--border);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table td:first-child {
+      font-weight: 700;
+      color: var(--dark);
+      background: #fafafa;
+    }
+    
+    .comparison-table td:nth-child(2) {
+      color: var(--gray);
+    }
+    
+    .comparison-table td:last-child {
+      color: var(--dark);
+      font-weight: 600;
+      background: #f0fdf4;
+    }
+    
+    .table-caption {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+      padding: 30px;
+      background: #fef7e0;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    
+    /* Results Grid */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .result-item {
+      display: flex;
+      align-items: start;
+      gap: 20px;
+    }
+    
+    .result-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    
+    .result-content h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    
+    .result-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+    
+    /* Before After */
+    .before-after-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin: 60px 0;
+      align-items: center;
+    }
+    
+    .before-after-images {
+      position: relative;
+    }
+    
+    .comparison-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    
+    .comparison-img {
+      position: relative;
+      aspect-ratio: 1;
+      background: #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .comparison-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .comparison-label {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 6px 14px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 4px;
+    }
+    
+    .before-after-content {
+      padding-left: 30px;
+    }
+    
+    .before-after-content h3 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    
+    .stats-grid {
+      display: grid;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      background: var(--light-gray);
+      border-radius: 8px;
+    }
+    
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+    
+    /* Quote */
+    .quote-box {
+      background: var(--light-gray);
+      padding: 50px;
+      border-left: 4px solid var(--primary);
+      margin: 60px 0;
+      border-radius: 8px;
+    }
+    
+    .quote-text {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--dark);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    
+    .quote-author {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .author-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ddd;
+      overflow: hidden;
+    }
+    
+    .author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .author-info h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .author-info p {
+      font-size: 14px;
+      color: var(--gray);
+    }
+    
+    /* Benefits List */
+    .benefits-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin: 50px 0;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: start;
+      gap: 15px;
+      padding: 25px;
+      background: #fff;
+      border-radius: 8px;
+    }
+    
+    .benefit-check {
+      width: 28px;
+      height: 28px;
+      background: var(--success);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    
+    .benefit-text {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.5;
+    }
+    
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 60px 0;
+    }
+    
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    
+    .product-image {
+      aspect-ratio: 1;
+      background: var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+    
+    .product-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    
+    .product-info {
+      padding: 25px;
+    }
+    
+    .product-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--success);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    
+    .product-name {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    
+    .product-desc {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    
+    .product-cta {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .product-cta:hover {
+      background: #a01309;
+    }
+    
+    /* Stats Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .stat-box {
+      padding: 30px 20px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+    }
+    
+    .stat-box-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    
+    .stat-box-label {
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+      font-weight: 600;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: var(--primary);
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      color: rgba(255,255,255,0.9);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 20px 50px;
+      background: #fff;
+      color: var(--primary);
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      padding: 50px 0;
+      text-align: center;
+    }
+    
+    .footer p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+      
+      h2 {
+        font-size: 32px;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
+      
+      .comparison-table {
+        overflow-x: auto;
+      }
+      
+      .comparison-table th,
+      .comparison-table td {
+        padding: 15px;
+        font-size: 14px;
+      }
+      
+      .results-grid,
+      .benefits-list,
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .before-after-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .before-after-content {
+        padding-left: 0;
+        padding-top: 30px;
+      }
+      
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">Scientific Skin Tech</div>
+      <a href="#produtos" class="header-cta">Experimente Agora</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">🇧🇷 Tecnologia Nacional</div>
+      <h1>Por que a tecnologia brasileira está superando as fórmulas internacionais em resultados reais de pele</h1>
+      <p class="subtitle">Desenvolvida pelo Dr. Rafael Arpini, a tecnologia BioSkin® está redefinindo os padrões de eficácia dos dermocosméticos ao ativar o poder regenerativo natural da pele.</p>
+    </div>
+  </section>
+
+  <!-- Section 1: Comparison -->
+  <section class="section">
+    <div class="container">
+      <div class="section-number">01. A Comparação</div>
+      <h2>BioSkin® vs. Ativos Internacionais</h2>
+      <p class="section-intro">Durante anos, você pagou caro por dermocosméticos importados que prometiam revolução e entregavam, no máximo, hidratação básica. Marcas europeias cobravam até <strong>R$ 800 por um frasco de 30ml</strong>, mas a tecnologia por trás? Mesma fórmula desde os anos 90. A tecnologia <strong>BioSkin®</strong>, desenvolvida no Brasil com pesquisa de ponta, está entregando <strong>resultados de consultório em casa por 1/3 do preço</strong>, com estudos clínicos que as grandes marcas se recusam a publicar.</p>
+      
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th>Fórmulas Internacionais</th>
+              <th>BioSkin® (Nacional)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Base de atuação</td>
+              <td>Superficial</td>
+              <td>Regenerativa, atua na comunicação celular</td>
+            </tr>
+            <tr>
+              <td>Ingredientes</td>
+              <td>Ácidos e derivados sintéticos</td>
+              <td>Biomiméticos, prebióticos e peptídeos inteligentes</td>
+            </tr>
+            <tr>
+              <td>Compatibilidade</td>
+              <td>Pode sensibilizar</td>
+              <td>Alta tolerância para todos os tipos de pele</td>
+            </tr>
+            <tr>
+              <td>Resultados</td>
+              <td>Temporários</td>
+              <td>Progressivos e duradouros</td>
+            </tr>
+            <tr>
+              <td>Origem</td>
+              <td>Laboratórios tradicionais</td>
+              <td>Desenvolvida por médico pesquisador</td>
+            </tr>
+            <tr>
+              <td>Foco</td>
+              <td>Correção estética</td>
+              <td>Reativação biológica natural</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="table-caption">
+        Em outras palavras: enquanto os cosméticos tradicionais cobrem a pele, a BioSkin® ensina a pele a se regenerar.
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Results -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-number">02. Resultados Reais</div>
+      <h2>Resultados que competem com os melhores laboratórios do mundo</h2>
+      
+      <div class="before-after-container">
+        <div class="before-after-images">
+          <div class="comparison-images">
+            <div class="comparison-img">
+              <div class="comparison-label">Antes</div>
+              <img src="https://via.placeholder.com/400x400/e5e5e5/666666?text=Antes" alt="Antes do tratamento">
+            </div>
+            <div class="comparison-img">
+              <div class="comparison-label">60 Dias</div>
+              <img src="https://via.placeholder.com/400x400/c4170c/ffffff?text=60+Dias" alt="Após 60 dias">
+            </div>
+          </div>
+        </div>
+        
+        <div class="before-after-content">
+          <h3>Resultados de Procedimento Clínico, Sem Agredir e Sem Agulhas</h3>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">92%</div>
+              <div class="stat-label">Melhora na textura e firmeza</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">87%</div>
+              <div class="stat-label">Redução de linhas finas</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Pele mais uniforme e luminosa</div>
+            </div>
+          </div>
+          
+          <p style="font-size: 14px; color: var(--gray); margin-top: 20px;">
+            <strong>Estudo clínico com 120 participantes | 60 dias de uso contínuo</strong>
+          </p>
+        </div>
+      </div>
+      
+      <div class="results-grid" style="margin-top: 80px;">
+        <div class="result-item">
+          <div class="result-icon">✨</div>
+          <div class="result-content">
+            <h3>Textura e Firmeza</h3>
+            <p>Melhora visivelmente a textura da pele, reduz poros dilatados e aumenta a firmeza sem agredir.</p>
+          </div>
+        </div>
+        
+        <div class="result-item">
+          <div class="result-icon">🎯</div>
+          <div class="result-content">
+            <h3>Linhas de Expressão</h3>
+            <p>Reduz linhas finas e marcas de expressão de forma natural, sem efeito rebote.</p>
+          </div>
+        </div>
+        
+        <div class="result-item">
+          <div class="result-icon">💧</div>
+          <div class="result-content">
+            <h3>Hidratação Profunda</h3>
+            <p>Reativa a capacidade natural da pele de reter água, mantendo hidratação duradoura.</p>
+          </div>
+        </div>
+        
+        <div class="result-item">
+          <div class="result-icon">🌟</div>
+          <div class="result-content">
+            <h3>Luminosidade</h3>
+            <p>Devolve o brilho natural da pele, resultando em aparência saudável e radiante.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Origin -->
+  <section class="section">
+    <div class="container">
+      <div class="section-number">03. A Origem</div>
+      <h2>Uma inovação que nasceu dentro do consultório</h2>
+      <p class="section-intro">Após anos de prática clínica, o <strong>Dr. Rafael Arpini</strong> percebeu que os cosméticos tradicionais muitas vezes irritavam e sobrecarregavam a pele. A partir dessa observação nasceu a BioSkin® — uma tecnologia <strong>biomimética</strong> que respeita a biologia natural da pele e reativa seus próprios mecanismos de regeneração.</p>
+      
+      <div class="quote-box">
+        <p class="quote-text">"A BioSkin® não tenta substituir a pele. Ela apenas ativa o que ela já sabe fazer de melhor."</p>
+        <div class="quote-author">
+          <div class="author-image">
+            <img src="https://via.placeholder.com/120x120/c4170c/ffffff?text=Dr.+R" alt="Dr. Rafael Arpini">
+          </div>
+          <div class="author-info">
+            <h4>Dr. Rafael Arpini</h4>
+            <p>Médico dermatologista e fundador da Scientific Skin Tech</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <div class="benefit-text">13 ativos biotecnológicos inteligentes</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <div class="benefit-text">Tecnologia biomimética exclusiva</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <div class="benefit-text">Desenvolvido por médico pesquisador</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <div class="benefit-text">Resultados progressivos e duradouros</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <div class="benefit-text">Dermatologicamente testado</div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <div class="benefit-text">Sem parabenos, sem fragrâncias artificiais</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Social Proof -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-number" style="color: var(--primary);">04. Reconhecimento</div>
+      <h2>A tecnologia que está conquistando dermatologistas e consumidores</h2>
+      <p class="section-intro">A BioSkin® já foi destaque em <strong>congressos científicos, podcasts e publicações dermatológicas</strong>, e hoje é recomendada por médicos e especialistas em estética em todo o país.</p>
+      
+      <div class="stats-bar">
+        <div class="stat-box">
+          <div class="stat-box-number">10k+</div>
+          <div class="stat-box-label">Pessoas já experimentaram</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-number">13</div>
+          <div class="stat-box-label">Ativos inteligentes</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-number">92%</div>
+          <div class="stat-box-label">Aprovação clínica</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-number">60</div>
+          <div class="stat-box-label">Dias para resultados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Products -->
+  <section class="section" id="produtos">
+    <div class="container">
+      <div class="section-number">05. A Revolução</div>
+      <h2>A revolução começa em casa</h2>
+      <p class="section-intro">Esse médico <strong>desafiou toda a indústria farmacêutica</strong> para garantir que você pudesse ter resultados de consultório em casa, e ele conseguiu. A <strong>Scientific Skin Tech</strong> transformou o cuidado com a pele em um tratamento biotecnológico de alta performance.</p>
+      
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/300x300/c4170c/ffffff?text=Preenchedor" alt="Sérum Preenchedor">
+          </div>
+          <div class="product-info">
+            <span class="product-badge">BioSkin®</span>
+            <h3 class="product-name">Sérum Preenchedor</h3>
+            <p class="product-desc">Reduz linhas finas e aumenta volume com peptídeos bioativos.</p>
+            <a href="../LocalView/index.html" class="product-cta">Experimente Agora</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/300x300/c4170c/ffffff?text=Regenerador" alt="Sérum Regenerador">
+          </div>
+          <div class="product-info">
+            <span class="product-badge">BioSkin®</span>
+            <h3 class="product-name">Sérum Regenerador</h3>
+            <p class="product-desc">Reativa a regeneração celular e melhora textura da pele.</p>
+            <a href="../LocalView/index.html" class="product-cta">Experimente Agora</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/300x300/c4170c/ffffff?text=Calmante" alt="Sérum Calmante">
+          </div>
+          <div class="product-info">
+            <span class="product-badge">BioSkin®</span>
+            <h3 class="product-name">Sérum Calmante</h3>
+            <p class="product-desc">Fortalece barreira cutânea e reduz sensibilidade.</p>
+            <a href="../LocalView/index.html" class="product-cta">Experimente Agora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Final -->
+  <section class="section section-light">
+    <div class="container" style="text-align: center; max-width: 900px;">
+      <div class="section-number">06. O Avanço</div>
+      <h2>A ciência brasileira que está mudando o skincare</h2>
+      <p class="section-intro" style="margin-left: auto; margin-right: auto;">O avanço da <strong>biotecnologia nacional</strong> prova que inovação e eficácia não são exclusividade de laboratórios estrangeiros. Elas nascem da combinação entre pesquisa, propósito e ciência feita no Brasil, para peles reais, resultados reais.</p>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Pronta para Experimentar a Revolução BioSkin®?</h2>
+      <p>Descubra como a tecnologia nacional está superando fórmulas internacionais em resultados reais de pele.</p>
+      <a href="../LocalView/index.html" class="cta-button">Experimente Agora →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Scientific Skin Tech. Tecnologia BioSkin® desenvolvida no Brasil.</p>
+      <p style="margin-top: 10px;"><a href="mailto:contato@kazai.com.br">contato@kazai.com.br</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
