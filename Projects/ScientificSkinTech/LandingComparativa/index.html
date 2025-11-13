@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioSkin® vs Internacional - Pele de Porcelana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #c4170c;
+            --brand-2: #8b1008;
+            --bg: #faf8f5;
+            --text: #1a1a1a;
+            --muted: #666;
+            --border: #e5e5e5;
+            --accent: #f5f5f0;
+            --success: #00a86b;
+            --warning: #f59e0b;
+            --star: #fbbf24;
+            /* Scientific Skin Pantone */
+            --pantone-cool-grey-6: #b1b3b6;
+            --pantone-cool-grey-10: #75787b;
+            --pantone-cool-grey-11: #53565a;
+            --pantone-180c: #c75b2c;
+            --pantone-600c: #f7ecb5;
+            --pantone-804c: #ffd1a9;
+            --pantone-502c: #f7cdd0;
+            --pantone-664c: #dbe2ee;
+            --pantone-544c: #a7c7e7;
+            --pantone-5575c: #8caea3;
+            --pantone-white: #fff;
+        }
+        /* Topbar */
+        .topbar {
+            background: var(--text);
+            color: #fff;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+        }
+        .topbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+        .nav {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .nav-link:hover {
+            background: var(--brand);
+            color: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background: #fff;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #faf8f5 0%, #fff 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--dark);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero .subtitle {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        
+        .hero .badge {
+            display: inline-block;
+            padding: 8px 18px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .section-intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .section-intro p {
+            font-size: 18px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .comparison-table th {
+            background: var(--dark);
+            color: #fff;
+            padding: 24px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .comparison-table td {
+            padding: 24px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 15px;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: var(--cream);
+        }
+        
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--dark);
+            width: 20%;
+        }
+        
+        .comparison-table td:nth-child(3) {
+            background: linear-gradient(135deg, rgba(196,23,12,0.05) 0%, rgba(227,176,98,0.05) 100%);
+            font-weight: 500;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3f0 0%, #faf8f5 100%);
+            border-left: 4px solid var(--primary);
+            padding: 32px;
+            margin: 40px 0;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--gray);
+        }
+        
+        /* Results Section */
+        .results-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .results-list {
+            list-style: none;
+        }
+        
+        .results-list li {
+            display: flex;
+            align-items: start;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+        
+        .results-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .results-image {
+            background: #ddd;
+            aspect-ratio: 4/3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        }
+        
+        .results-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Doctor Section */
+        .doctor-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .doctor-content h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+        
+        .doctor-content p {
+            font-size: 17px;
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .quote-box {
+            background: var(--cream);
+            border-left: 4px solid var(--gold);
+            padding: 28px;
+            margin-top: 32px;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--dark);
+        }
+        
+        .quote-author {
+            font-style: normal;
+            font-size: 14px;
+            color: var(--gray);
+            margin-top: 12px;
+            font-weight: 600;
+        }
+        
+        /* Trust Section */
+        .trust-section {
+            padding: 80px 0;
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+        }
+        
+        .trust-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .trust-section p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .trust-stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 60px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Crimson Pro', serif;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 8px;
+        }
+        
+        /* Product Section */
+        .product-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #faf8f5 0%, #fff 100%);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .product-image {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .product-content h2 {
+            font-size: 42px;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+        
+        .product-content p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+        
+        .benefits-list li {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: var(--gray);
+        }
+        
+        .benefits-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 20px 48px;
+            background: linear-gradient(90deg, var(--gold), #f7e7c6);
+            color: var(--dark);
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(227,176,98,0.2);
+            transition: all 0.3s ease;
+            margin-top: 24px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(227,176,98,0.3);
+        }
+        
+        /* Science Section */
+        .science-section {
+            padding: 80px 0;
+            background: #fff;
+            text-align: center;
+        }
+        
+        .science-section h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+        
+        .science-section p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero .subtitle {
+                font-size: 16px;
+            }
+            
+            .results-grid,
+            .doctor-grid,
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .trust-stats {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .comparison-table {
+                font-size: 13px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <!-- Topbar / Menu -->
+        <div class="topbar">
+            <div class="topbar-content">
+                <div class="logo">SCIENTIFIC SKIN TECH</div>
+                <nav class="nav">
+                    <a class="nav-link" href="/Projects/ScientificSkinTech/LandingAdvertorial/index.html">Advertorial</a>
+                    <a class="nav-link" href="/Projects/ScientificSkinTech/LandingListcycle/index.html">Listcycle</a>
+                    <a class="nav-link" href="/Projects/ScientificSkinTech/LandingComparativa/index.html">Comparativa</a>
+                    <a class="nav-link" href="/Projects/ScientificSkinTech/LandingAdvertorialDaniel/index.html">Editorial</a>
+                    <a class="nav-link" href="/Projects/ScientificSkinTech/LandingListcycleDaniel/index.html">Comparativo</a>
+                </nav>
+            </div>
+        </div>
+        <div class="container">
+            <div class="badge">Tecnologia Nacional</div>
+            <h1>Por que a tecnologia brasileira está superando as fórmulas internacionais em resultados reais de pele</h1>
+            <p class="subtitle">Desenvolvida pelo Dr. Rafael Arpini, a tecnologia BioSkin® está redefinindo os padrões de eficácia dos dermocosméticos ao ativar o poder regenerativo natural da pele.</p>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>BioSkin® vs. Ativos Internacionais</h2>
+                <p>Durante anos, os dermocosméticos importados dominaram o mercado. Marcas europeias e promessas francesas sempre pareceram sinônimo de resultado.</p>
+                <p><strong>Mas isso começou a mudar.</strong></p>
+                <p>A tecnologia BioSkin®, desenvolvida no Brasil, está entregando resultados de consultório em casa, com segurança e eficácia comprovadas.</p>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Critério</th>
+                        <th>Fórmulas Internacionais</th>
+                        <th>BioSkin® (Tecnologia Nacional)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Base de atuação</td>
+                        <td>Superficial</td>
+                        <td>Regenerativa, atua na comunicação celular</td>
+                    </tr>
+                    <tr>
+                        <td>Ingredientes</td>
+                        <td>Ácidos e derivados sintéticos</td>
+                        <td>Biomiméticos, prebióticos e peptídeos inteligentes</td>
+                    </tr>
+                    <tr>
+                        <td>Compatibilidade</td>
+                        <td>Pode sensibilizar</td>
+                        <td>Alta tolerância para todos os tipos de pele</td>
+                    </tr>
+                    <tr>
+                        <td>Resultados</td>
+                        <td>Temporários</td>
+                        <td>Progressivos e duradouros</td>
+                    </tr>
+                    <tr>
+                        <td>Origem</td>
+                        <td>Laboratórios tradicionais</td>
+                        <td>Desenvolvida por médico pesquisador</td>
+                    </tr>
+                    <tr>
+                        <td>Foco</td>
+                        <td>Correção estética</td>
+                        <td>Reativação biológica natural</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                Em outras palavras: enquanto os cosméticos tradicionais cobrem a pele, a BioSkin® ensina a pele a se regenerar.
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Resultados que competem com os melhores laboratórios do mundo</h2>
+                <p>Estudos e relatos clínicos comprovam: os produtos com tecnologia BioSkin® entregam resultados de procedimento clínico, sem agredir e sem agulhas.</p>
+            </div>
+
+            <div class="results-grid">
+                <div>
+                    <h3 style="font-size: 24px; margin-bottom: 24px;">Principais resultados observados:</h3>
+                    <ul class="results-list">
+                        <li>Textura e firmeza visivelmente melhoradas</li>
+                        <li>Redução de linhas finas e poros dilatados</li>
+                        <li>Pele mais uniforme, hidratada e luminosa</li>
+                        <li>Resultados progressivos e duradouros</li>
+                    </ul>
+                </div>
+                <div class="results-image">
+                    <img src="../../../assets/pele-de-porcelana/antes.png" alt="Resultados Pele de Porcelana - Antes e Depois">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor Section -->
+    <section class="doctor-section">
+        <div class="container">
+            <div class="doctor-grid">
+                <div class="results-image">
+                    <img src="../../../assets/pele-de-porcelana/kit_01_1080.png" alt="Dr. Rafael Arpini - Tecnologia BioSkin">
+                </div>
+                <div class="doctor-content">
+                    <h2>Uma inovação que nasceu dentro do consultório</h2>
+                    <p>Após anos de prática clínica, o <strong>Dr. Rafael Arpini</strong> percebeu que os cosméticos tradicionais muitas vezes irritavam e sobrecarregavam a pele.</p>
+                    <p>A partir dessa observação nasceu a BioSkin® — uma tecnologia <strong>biomimética</strong> que <strong>respeita a biologia natural da pele e reativa seus próprios mecanismos de regeneração</strong>.</p>
+                    
+                    <div class="quote-box">
+                        "A BioSkin não tenta substituir a pele. Ela apenas ativa o que ela já sabe fazer de melhor."
+                        <div class="quote-author">— Dr. Rafael Arpini, médico e fundador da Scientific Skin Tech</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <h2>A tecnologia que está conquistando dermatologistas e consumidores</h2>
+            <p>A BioSkin® já foi destaque em congressos científicos, podcasts e publicações dermatológicas, e hoje é recomendada por médicos e especialistas em estética em todo o país.</p>
+            
+            <div class="trust-stats">
+                <div class="stat">
+                    <div class="stat-number">10k+</div>
+                    <div class="stat-label">Pessoas já experimentaram</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Ativos inteligentes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="container">
+            <div class="product-grid">
+                <div class="product-content">
+                    <h2>A revolução começa em casa</h2>
+                    <p>Esse médico <strong>desafiou toda a indústria farmacêutica</strong> para garantir que você pudesse ter <strong>resultados de consultório em casa</strong>, e ele conseguiu.</p>
+                    <p>A <strong>Scientific Skin Tech</strong> transformou o cuidado com a pele em um tratamento biotecnológico de alta performance, com <strong>13 ativos inteligentes</strong> e <strong>a exclusiva tecnologia BioSkin®</strong>.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Tecnologia biomimética que respeita sua pele</li>
+                        <li>Resultados progressivos e duradouros</li>
+                        <li>Alta tolerância para todos os tipos de pele</li>
+                        <li>Desenvolvido por médico pesquisador brasileiro</li>
+                    </ul>
+                    
+                    <a href="https://scientificskintech.com.br/products/pele-de-porcelana-1?variant=50080877248834" class="cta-button">Experimente agora →</a>
+                </div>
+                <div class="product-image">
+                    <img src="../../../assets/pele-de-porcelana/kit_01_1600.png" alt="Tratamento Pele de Porcelana">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="science-section">
+        <div class="container">
+            <h2>A ciência brasileira que está mudando o skincare</h2>
+            <p>O avanço da <strong>biotecnologia nacional</strong> prova que inovação e eficácia não são exclusividade de laboratórios estrangeiros.</p>
+            <p>Elas nascem da combinação entre <strong>pesquisa, propósito e ciência feita no Brasil</strong>, para peles reais, resultados reais.</p>
+        </div>
+    </section>
+</body>
+</html>

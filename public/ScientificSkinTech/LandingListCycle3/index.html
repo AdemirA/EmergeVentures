@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista: 7 Motivos para Preferir BioSkin® (vs. fórmulas internacionais)</title>
+  <meta name="description" content="Listicle 100% focado em conversão: 7 motivos pelos quais a tecnologia brasileira BioSkin® supera fórmulas internacionais em resultados reais de pele." />
+  <style>
+    :root{
+      --brand:#d5632a; --brand-2:#a94e22;
+      --bg:#ffffff; --text:#111112; --muted:#616771; --border:#e7e9ee; --accent:#fff4ee; --success:#0ea05a; --star:#ffb400; --danger:#e5484d;
+    }
+    [data-theme="dark"]{
+      --bg:#121314; --text:#eef1f4; --muted:#a8b0bb; --border:#25282d; --accent:#1a1c1f;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:var(--brand);text-decoration:none;transition:color .2s ease}
+    a:hover{text-decoration:underline;color:var(--brand-2)}
+    .container{max-width:1140px;margin:0 auto;padding:0 20px}
+    /* Micro-interações base */
+    .hover-raise{transition:transform .18s ease, box-shadow .18s ease}
+    .hover-raise:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.07)}
+    [data-theme="dark"] .hover-raise:hover{box-shadow:0 10px 24px rgba(0,0,0,.35)}
+    .btn{border:none;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;transition:transform .06s ease, filter .2s ease}
+    .btn:active{transform:translateY(1px)}
+    /* Topbar */
+    .topbar{position:sticky;top:0;z-index:80;background:#fff;border-bottom:1px solid var(--border);backdrop-filter:saturate(140%) blur(6px)}
+    [data-theme="dark"] .topbar{background:#0f1011}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:800}
+    .brand .dot{width:10px;height:10px;background:var(--brand);border-radius:50%}
+    .micro-cta{display:flex;gap:8px;align-items:center}
+    .btn-primary{background:linear-gradient(180deg,var(--brand),var(--brand-2));color:#fff}
+    .btn-primary:hover{filter:brightness(.98)}
+    .btn-ghost{background:transparent;border:1px solid var(--border);color:var(--brand-2)}
+    /* Ribbon */
+    .ribbon{background:var(--accent);border-bottom:1px dashed var(--border)}
+    .ribbon-inner{display:flex;gap:10px;align-items:center;justify-content:center;padding:10px 0;font-size:14px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:#fff;font-weight:700}
+    [data-theme="dark"] .pill{background:#0f1011}
+    /* Hero */
+    .hero{padding:28px 0;border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(213,99,42,.05),transparent)}
+    [data-theme="dark"] .hero{background:linear-gradient(180deg,rgba(213,99,42,.2),transparent)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:28px;align-items:center}
+    h1{font-size:clamp(28px,3.4vw,48px);line-height:1.06;margin:6px 0 10px}
+    .subtitle{color:var(--muted);font-size:18px}
+    .author{display:flex;gap:12px;align-items:center;color:var(--muted);margin-top:10px}
+    .avatar{width:40px;height:40px;border-radius:50%;background:#d9d9d9}
+    [data-theme="dark"] .avatar{background:#2a2d32}
+    .hero-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
+    [data-theme="dark"] .hero-card{background:#121314}
+    .ph{width:100%;aspect-ratio:4/3;background:#d9d9d9;border-radius:12px}
+    /* TOC */
+    .sticky-toc{position:sticky;top:76px;display:grid;gap:12px}
+    .toc{border:1px solid var(--border);border-radius:14px;background:#fff;padding:14px}
+    [data-theme="dark"] .toc{background:#121314}
+    .toc h4{margin:0 0 8px}
+    .toc a{display:block;padding:8px 10px;border-radius:10px;transition:background .2s ease,color .2s ease}
+    .toc a[aria-current="true"], .toc a:hover{background:#ffe7dc;color:#7a3416}
+    [data-theme="dark"] .toc a[aria-current="true"], [data-theme="dark"] .toc a:hover{background:#2a1a14;color:#ffb28e}
+    /* List */
+    section{padding:22px 0}
+    .list-item{display:grid;grid-template-columns:72px 1fr;gap:16px;border:1px solid var(--border);border-radius:16px;background:#fff;padding:16px;margin-bottom:14px}
+    [data-theme="dark"] .list-item{background:#121314}
+    .list-item:hover{border-color:#ffd5c2}
+    .badge-n{display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:12px;background:#ffe7dc;font-weight:900;font-size:22px;color:var(--brand)}
+    .li-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .li-title{font-size:20px;margin:0}
+    .li-meta{display:flex;gap:10px;color:var(--muted);font-size:12px}
+    .li-body{color:#2b3139;margin:8px 0 0}
+    [data-theme="dark"] .li-body{color:#dbe1ea}
+    .proof{display:flex;gap:8px;align-items:center;margin-top:10px;font-size:13px;color:var(--muted)}
+    /* Buy box */
+    .buy{border:2px solid var(--brand);background:linear-gradient(180deg,#fff, #fff4ee);border-radius:16px;padding:16px;margin:14px 0}
+    [data-theme="dark"] .buy{background:linear-gradient(180deg,#121314,#1a1c1f)}
+    .buy h4{margin:0 0 6px}
+    .price{font-weight:900;font-size:22px}
+    .benefits{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+    .benefits .pill{background:#fff}
+    [data-theme="dark"] .benefits .pill{background:#0f1011}
+    /* Reviews Carousel */
+    .carousel{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:14px}
+    .track{display:flex;transition:transform .4s ease}
+    .slide{min-width:100%;padding:16px;background:#fff}
+    [data-theme="dark"] .slide{background:#121314}
+    .nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.08);border:none;width:36px;height:36px;border-radius:999px;cursor:pointer}
+    .nav-btn:hover{filter:brightness(.95)}
+    .prev{left:8px} .next{right:8px}
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .plan{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+    [data-theme="dark"] .plan{background:#121314}
+    .plan.best{border:2px solid var(--brand);box-shadow:0 12px 30px rgba(213,99,42,.12)}
+    .plan h3{margin:0 0 4px}
+    .price-lg{font-size:32px;font-weight:900}
+    .tag-sub{display:inline-flex;gap:6px;align-items:center;padding:6px 10px;border-radius:999px;background:#ffe7dc;color:#7a3416;font-weight:800;border:1px solid var(--border)}
+    /* Footer & Sticky */
+    .sticky-cta{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--border);padding:10px 0;z-index:70}
+    [data-theme="dark"] .sticky-cta{background:#0f1011}
+    .sticky-wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    footer{border-top:1px solid var(--border);padding:28px 0 60px;color:var(--muted);font-size:13px}
+    /* Progress */
+    .progress{position:fixed;top:0;left:0;height:3px;background:var(--brand);width:0;z-index:90;box-shadow:0 0 8px rgba(213,99,42,.6)}
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.in{opacity:1;transform:translateY(0)}
+    /* Responsive */
+    @media (max-width:960px){
+      .hero-grid{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .list-item{grid-template-columns:56px 1fr}
+      .badge-n{width:56px;height:56px}
+      .sticky-wrap{flex-direction:column;align-items:stretch}
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand hover-raise"><span class="dot"></span>Scientific Skin Tech</div>
+      <div class="micro-cta">
+        <button class="btn btn-ghost" id="themeToggle" aria-label="Alternar tema">Tema</button>
+        <span class="pill">Frete grátis • Garantia 30 dias</span>
+        <button class="btn btn-primary" aria-label="Ir ao checkout">Comprar agora</button>
+      </div>
+    </div>
+  </header>
+  <!-- Ribbon -->
+  <div class="ribbon">
+    <div class="container ribbon-inner">
+      <span class="pill">Oferta ativa</span>
+      <strong>Kit Pele de Porcelana</strong>
+      <span class="kickers">Entrega rápida em todo o Brasil</span>
+    </div>
+  </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>7 motivos para preferir BioSkin® em vez de fórmulas internacionais</h1>
+        <p class="subtitle">Tecnologia brasileira desenvolvida pelo <strong>Dr. Rafael Arpini</strong> para reativar a inteligência natural da pele e entregar <strong>resultados de consultório em casa</strong>, com alta tolerância.</p>
+        <div class="author"><div class="avatar" aria-hidden="true"></div><div><strong>Dr. Rafael Arpini</strong><div class="kickers">Dermatologista • Scientific Skin Tech</div></div></div>
+        <div class="buy" role="region" aria-label="Box de compra rápido">
+          <h4>Comece hoje: Tratamento Pele de Porcelana</h4>
+          <div class="benefits">
+            <span class="pill">13 ativos inteligentes</span>
+            <span class="pill">Alta tolerância</span>
+            <span class="pill">Cruelty‑free</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <div class="price">R$ ——— <span style="font-size:13px;color:var(--muted)">em até 12x</span></div>
+            <button class="btn btn-primary">Comprar agora</button>
+            <button class="btn btn-ghost">Ver avaliações</button>
+          </div>
+        </div>
+      </div>
+      <aside class="sticky-toc">
+        <div class="toc hover-raise">
+          <h4>Navegue pelos motivos</h4>
+          <a href="#m1">1. Age na comunicação celular</a>
+          <a href="#m2">2. Resultados progressivos</a>
+          <a href="#m3">3. Alta tolerância</a>
+          <a href="#m4">4. 13 ativos inteligentes</a>
+          <a href="#m5">5. Menos passos, mais adesão</a>
+          <a href="#m6">6. Prova clínica e social</a>
+          <a href="#m7">7. Custo‑benefício vencedor</a>
+        </div>
+        <div class="hero-card">
+          <div class="ph" aria-label="Imagem produto"></div>
+          <div class="kickers">⭐ 4,8/5 • +10.000 clientes</div>
+          <button class="btn btn-primary" style="width:100%">Quero experimentar</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <main>
+    <div class="container">
+      <!-- Motivo 1 -->
+      <section id="m1" class="list-item reveal">
+        <div class="badge-n">1</div>
+        <div>
+          <div class="li-head">
+            <h3 class="li-title">Age na comunicação celular (não só na superfície)</h3>
+            <div class="li-meta"><span>Comparativo direto</span><span>•</span><span>Benefício prático</span></div>
+          </div>
+          <p class="li-body">Enquanto ácidos e fórmulas importadas podem atuar apenas na camada mais externa, <strong>BioSkin®</strong> utiliza peptídeos e biomiméticos que sinalizam a pele a se <strong>auto‑regenerar</strong>. Resultado: melhora real de textura e firmeza sem descamar.</p>
+          <div class="proof">✅ Dermatologicamente testado • 🧪 Biomimética aplicada</div>
+          <div class="buy"><h4>Leve o poder clínico para sua rotina</h4><button class="btn btn-primary">Adicionar ao carrinho</button> <button class="btn btn-ghost">Saiba mais</button></div>
+        </div>
+      </section>
+      <!-- Motivo 2 -->
+      <section id="m2" class="list-item reveal">
+        <div class="badge-n">2</div>
+        <div>
+          <div class="li-head"><h3 class="li-title">Resultados progressivos e duradouros</h3><div class="li-meta"><span>7–14 dias</span><span>•</span><span>Uso contínuo</span></div></div>
+          <p class="li-body">Sem “efeito ioiô”. A cada ciclo, a pele responde melhor — <strong>mais viço, poros menos aparentes e linhas suavizadas</strong>. Ideal para quem quer evolução real sem agressões.</p>
+          <div class="proof">⭐ Média 4,8/5 • "sensação de clínica em casa"</div>
+          <div class="buy"><h4>Comece hoje e acompanhe a evolução</h4><button class="btn btn-primary">Comprar agora</button> <button class="btn btn-ghost">Ver antes/depois</button></div>
+        </div>
+      </section>
+      <!-- Motivo 3 -->
+      <section id="m3" class="list-item reveal">
+        <div class="badge-n">3</div>
+        <div>
+          <div class="li-head"><h3 class="li-title">Alta tolerância para peles sensíveis</h3><div class="li-meta"><span>Sem ardor</span><span>•</span><span>Sem descamação</span></div></div>
+          <p class="li-body">Projeto focado em estabilidade da barreira cutânea. <strong>Prebióticos</strong> equilibram o microbioma e reduzem reatividade — perfeito para quem já sofreu com ácidos fortes.</p>
+          <div class="proof">🛡️ Sem fragrâncias agressivas • Cruelty‑free</div>
+          <div class="buy"><h4>Sinta a pele confortável desde o primeiro uso</h4><button class="btn btn-primary">Quero experimentar</button> <button class="btn btn-ghost">Ver avaliações</button></div>
+        </div>
+      </section>
+      <!-- Motivo 4 -->
+      <section id="m4" class="list-item reveal">
+        <div class="badge-n">4</div>
+        <div>
+          <div class="li-head"><h3 class="li-title">13 ativos inteligentes: sinergia que entrega</h3><div class="li-meta"><span>Peptídeos</span><span>•</span><span>Biomiméticos</span><span>•</span><span>Prebióticos</span></div></div>
+          <p class="li-body">Formulação modular que atua em <strong>firmeza, textura, hidratação e luminosidade</strong> sem sobrecarregar. Menos atrito, mais consistência de uso.</p>
+          <div class="proof">🧬 Curadoria clínica por Dr. Arpini</div>
+          <div class="buy"><h4>Kit completo com economia</h4><div class="benefits"><span class="pill">Frete grátis</span><span class="pill">Garantia 30 dias</span><span class="pill">Parcele em 12x</span></div><button class="btn btn-primary">Adicionar kit</button></div>
+        </div>
+      </section>
+      <!-- Motivo 5 -->
+      <section id="m5" class="list-item reveal">
+        <div class="badge-n">5</div>
+        <div>
+          <div class="li-head"><h3 class="li-title">Menos passos. Mais adesão. Mais resultado.</h3><div class="li-meta"><span>1 kit</span><span>•</span><span>4 produtos</span></div></div>
+          <p class="li-body">Rotina enxuta pensada para caber na vida real. <strong>Quanto menos fricção</strong>, maior a constância — e constância é a alavanca dos resultados.</p>
+          <div class="proof">⏱️ 3–5 min/dia • ideal AM/PM</div>
+          <div class="buy"><h4>Comece pela rotina simples</h4><button class="btn btn-primary">Comprar rotina</button> <button class="btn btn-ghost">Ver como usar</button></div>
+        </div>
+      </section>
+      <!-- Motivo 6 -->
+      <section id="m6" class="list-item reveal">
+        <div class="badge-n">6</div>
+        <div>
+          <div class="li-head"><h3 class="li-title">Prova clínica + prova social</h3><div class="li-meta"><span>Resultados reais</span><span>•</span><span>Depoimentos verificados</span></div></div>
+          <p class="li-body">Antes/depois, relatos e acompanhamento em consultório mostram <strong>melhora visível de textura, viço e firmeza</strong> sem agressões.</p>
+          <div class="carousel hover-raise" id="reviews">
+            <div class="track">
+              <div class="slide"><div class="stars">★★★★★</div><p>Textura e luminosidade em 2 semanas.</p><div class="verified">Compra verificada</div></div>
+              <div class="slide"><div class="stars">★★★★☆</div><p>Poros menos aparentes, sem arder.</p><div class="verified">Compra verificada</div></div>
+              <div class="slide"><div class="stars">★★★★★</div><p>Firmeza visível, pele estável.</p><div class="verified">Compra verificada</div></div>
+            </div>
+            <button class="nav-btn prev" aria-label="Anterior">‹</button>
+            <button class="nav-btn next" aria-label="Próximo">›</button>
+          </div><p>Textura e luminosidade em 2 semanas.</p><div class="verified">Compra verificada</div></div>
+            <div class="review"><div class="stars">★★★★☆</div><p>Poros menos aparentes, sem arder.</p><div class="verified">Compra verificada</div></div>
+            <div class="review"><div class="stars">★★★★★</div><p>Firmeza visível, pele estável.</p><div class="verified">Compra verificada</div></div>
+          </div>
+          <div class="buy"><h4>Veja mais provas e escolha seu kit</h4><button class="btn btn-primary">Ver resultados</button> <button class="btn btn-ghost">Comparar kits</button></div>
+        </div>
+      </section>
+      <!-- Motivo 7 -->
+      <section id="m7" class="list-item reveal">
+        <div class="badge-n">7</div>
+        <div>
+          <div class="li-head"><h3 class="li-title">Custo‑benefício que vence importados</h3><div class="li-meta"><span>Entrega clínica</span><span>•</span><span>Preço honesto</span></div></div>
+          <p class="li-body">Você paga por <strong>ciência que funciona</strong>, não por narrativa de luxo. Produção nacional reduz custos e mantém padrão internacional de qualidade.</p>
+          <div class="proof">💳 Parcelamento facilitado • 📦 Entrega rápida</div>
+          <div class="buy"><h4>Pronto para começar?</h4><button class="btn btn-primary">Fechar compra</button> <button class="btn btn-ghost">Ver condições</button></div>
+        </div>
+      </section>
+      <!-- Comparativo compacto (reforço) -->
+      <section>
+        <div class="list-item" style="grid-template-columns:1fr">
+          <h3 style="margin:0 0 6px">Comparativo rápido</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="border:1px solid var(--border);border-radius:12px;padding:12px"><strong>Fórmulas internacionais</strong><ul>
+              <li>Foco superficial</li><li>Maior chance de sensibilidade</li><li>Resultados imediatos e passageiros</li></ul></div>
+            <div style="border:2px solid var(--brand);border-radius:12px;padding:12px;background:var(--accent)"><strong>BioSkin®</strong><ul>
+              <li>Comunicação celular regenerativa</li><li>Alta tolerância</li><li>Resultados progressivos e duradouros</li></ul></div>
+          </div>
+          <div class="buy"><h4>Escolha BioSkin®</h4><button class="btn btn-primary">Adicionar ao carrinho</button></div>
+        </div>
+      </section>
+      <!-- Pricing -->
+      <section id="planos" class="reveal">
+        <h2 style="margin:0 0 10px">Escolha seu plano</h2>
+        <div class="pricing">
+          <article class="plan">
+            <h3>Essencial</h3>
+            <div class="price-lg">R$ ———</div>
+            <p class="subtitle">30 dias • Compra única</p>
+            <ul>
+              <li>13 ativos inteligentes</li>
+              <li>Alta tolerância</li>
+              <li>Frete grátis</li>
+            </ul>
+            <div style="display:flex;gap:8px"><button class="btn btn-primary">Comprar Essencial</button><button class="btn btn-ghost">Detalhes</button></div>
+          </article>
+          <article class="plan best">
+            <div class="tag-sub">Assine e economize 15%</div>
+            <h3>Completo (Assinatura)</h3>
+            <div class="price-lg">R$ ——— <span style="font-size:12px;color:var(--muted)">/mês</span></div>
+            <p class="subtitle">60 dias • Renovação automática • Cancelamento simples</p>
+            <ul>
+              <li>Entrega prioritária</li>
+              <li>Suporte dedicado</li>
+              <li>Brinde surpresa no 3º mês</li>
+            </ul>
+            <div style="display:flex;gap:8px"><button class="btn btn-primary">Assinar agora</button><button class="btn btn-ghost">Ver vantagens</button></div>
+          </article>
+        </div>
+      </section>
+      <!-- FAQ e Garantia -->
+      <section id="faq">
+        <h2 style="margin:0 0 10px">Perguntas frequentes</h2>
+        <details><summary>Funciona para pele sensível?</summary><p>Sim. A curadoria de ativos prioriza biomiméticos e prebióticos com alta tolerância. Ideal para estabilizar a barreira cutânea.</p></details>
+        <details><summary>Quando vejo resultados?</summary><p>Em média, 7–14 dias para melhora de textura e viço. Ganhos são cumulativos com uso contínuo.</p></details>
+        <details><summary>Posso usar com ácidos?</summary><p>Recomendamos 2 semanas apenas com BioSkin® para estabilização; depois reintroduza conforme orientação.</p></details>
+        <details><summary>Qual a política de garantia?</summary><p>Garantia de satisfação de 30 dias. Se não amar, ajudamos na devolução.</p></details>
+        <div class="guarantee" style="margin-top:12px">
+          <div class="avatar" aria-hidden="true"></div>
+          <div><strong>Compra sem risco</strong><p class="subtitle">Teste por 30 dias. Frete grátis Brasil. Suporte humano.</p></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- Sticky CTA final -->
+  <div class="sticky-cta" role="region" aria-label="Barra de checkout">
+    <div class="container sticky-wrap">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <span class="pill">Mais vendido</span>
+        <strong>Kit Pele de Porcelana</strong>
+        <span class="kickers">⭐ 4,8/5 • +10.000 clientes</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn btn-ghost">Ver kits</button>
+        <button class="btn btn-primary">Comprar agora</button>
+      </div>
+    </div>
+  </div>
+  <div class="sticky-cta" role="region" aria-label="Barra de checkout">
+    <div class="container sticky-wrap">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <span class="pill">Mais vendido</span>
+        <strong>Kit Pele de Porcelana</strong>
+        <span class="kickers">⭐ 4,8/5 • +10.000 clientes</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn btn-ghost">Ver kits</button>
+        <button class="btn btn-primary">Comprar agora</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Scientific Skin Tech — BioSkin®
+    </div>
+  </footer>
+  <div class="progress" id="progress"></div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Tema claro/escuro
+    const toggle=document.getElementById('themeToggle');
+    toggle && toggle.addEventListener('click',()=>{
+      document.documentElement.toggleAttribute('data-theme');
+      const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+      toggle.innerText=isDark?'Tema: Dark':'Tema';
+    });
+    // Click logging para A/B
+    document.querySelectorAll('.btn').forEach(b=>b.addEventListener('click',()=>console.log('CTA',b.innerText)));
+    // IntersectionObserver (reveal + scrollspy)
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          const id=e.target.getAttribute('id');
+          if(id){
+            document.querySelectorAll('.toc a').forEach(a=>a.removeAttribute('aria-current'));
+            const link=document.querySelector('.toc a[href="#'+id+'"]');
+            if(link) link.setAttribute('aria-current','true');
+          }
+        }
+      })
+    },{threshold:.2});
+    document.querySelectorAll('.list-item, #planos').forEach(s=>observer.observe(s));
+    // Barra de progresso
+    const progress=document.getElementById('progress');
+    const onScroll=()=>{
+      const h=document.documentElement; const st=h.scrollTop; const sh=h.scrollHeight-h.clientHeight; const pct=(st/sh)*100; progress.style.width=pct+'%';
+    };
+    document.addEventListener('scroll',onScroll);
+    // TOC smooth scroll
+    document.querySelectorAll('.toc a').forEach(a=>{
+      a.addEventListener('click',(ev)=>{ev.preventDefault(); const el=document.querySelector(a.getAttribute('href')); el&&el.scrollIntoView({behavior:'smooth',block:'start'});});
+    });
+    // Reviews carousel
+    const carousel=document.getElementById('reviews');
+    if(carousel){
+      const track=carousel.querySelector('.track');
+      const slides=carousel.querySelectorAll('.slide');
+      let index=0;
+      const update=()=>{ track.style.transform=`translateX(${-index*100}%)`; };
+      carousel.querySelector('.prev').addEventListener('click',()=>{ index=(index-1+slides.length)%slides.length; update(); });
+      carousel.querySelector('.next').addEventListener('click',()=>{ index=(index+1)%slides.length; update(); });
+      let auto=setInterval(()=>{ index=(index+1)%slides.length; update(); }, 5000);
+      carousel.addEventListener('mouseenter',()=>clearInterval(auto));
+      carousel.addEventListener('mouseleave',()=>{ auto=setInterval(()=>{ index=(index+1)%slides.length; update(); },5000); });
+    }
+  </script>
+</body>
+</html>

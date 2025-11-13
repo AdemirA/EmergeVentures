@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Scientific Skin Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script>
+    // Proteção por senha
+    (function() {
+      const password = 'Lucras#10';
+      const hasAccess = sessionStorage.getItem('blogAccess');
+      
+      if (!hasAccess) {
+        const userPassword = prompt('Digite a senha para acessar o blog:');
+        if (userPassword !== password) {
+          alert('Senha incorreta!');
+          window.location.href = '../../../index.html';
+        } else {
+          sessionStorage.setItem('blogAccess', 'true');
+        }
+      }
+    })();
+  </script>
+  
+  <style>
+    :root {
+      --primary: #c4170c;
+      --dark: #1a1a1a;
+      --gray: #666;
+      --light-gray: #f5f5f5;
+      --cream: #faf8f5;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: #fff;
+    }
+    
+    /* Header */
+    .header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 20px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.95);
+    }
+    
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .nav {
+      display: flex;
+      gap: 35px;
+    }
+    
+    .nav a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.3s ease;
+    }
+    
+    .nav a:hover {
+      color: var(--primary);
+    }
+    
+    /* Hero Blog */
+    .blog-hero {
+      padding: 80px 60px 60px;
+      background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
+      text-align: center;
+    }
+    
+    .blog-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .blog-hero p {
+      font-size: 18px;
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Categories */
+    .categories-section {
+      padding: 40px 60px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 71px;
+      z-index: 90;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.95);
+    }
+    
+    .categories-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .category-pill {
+      padding: 10px 24px;
+      background: var(--light-gray);
+      border: 2px solid transparent;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .category-pill:hover,
+    .category-pill.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    
+    /* Posts Grid - Layout Vertical para 45+ */
+    .posts-section {
+      padding: 60px 40px 100px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .posts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    .post-card {
+      background: #fff;
+      border: 1px solid #eee;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+    }
+    
+    .post-card:hover {
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      border-color: var(--primary);
+    }
+    
+    .post-image {
+      width: 280px;
+      min-width: 280px;
+      height: auto;
+      min-height: 280px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      border-right: 1px solid #eee;
+    }
+    
+    .post-content {
+      padding: 35px 40px;
+    }
+    
+    .post-category {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+    }
+    
+    .post-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 15px;
+    }
+    
+    .post-description {
+      color: var(--gray);
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+    
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 25px;
+      border-top: 1px solid #eee;
+    }
+    
+    .post-rating {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--primary);
+    }
+    
+    .stars {
+      color: #ffc107;
+      font-size: 18px;
+    }
+    
+    .post-read-time {
+      color: var(--gray);
+      font-size: 15px;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      padding: 50px 60px 30px;
+      text-align: center;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer a:hover {
+      color: #fff;
+    }
+    
+    @media (max-width: 768px) {
+      .header, .blog-hero, .categories-section, .posts-section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      
+      .blog-hero h1 {
+        font-size: 36px;
+      }
+      
+      .post-card {
+        flex-direction: column;
+      }
+      
+      .post-image {
+        width: 100%;
+        min-width: 100%;
+        height: 220px;
+        min-height: 220px;
+        font-size: 64px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+      
+      .post-content {
+        padding: 25px 20px;
+      }
+      
+      .post-title {
+        font-size: 22px;
+      }
+      
+      .post-description {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">Scientific Skin Tech</div>
+      <nav class="nav">
+        <a href="../LocalView/index.html">Produtos</a>
+        <a href="index.html">Blog</a>
+        <a href="../../../index.html">Voltar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="blog-hero">
+    <h1>Ciência da Pele</h1>
+    <p>Descubra os segredos da biotecnologia aplicada ao cuidado dermatológico premium</p>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories-section">
+    <div class="categories-container">
+      <a href="#" class="category-pill active" data-category="todos">Todos</a>
+      <a href="#" class="category-pill" data-category="tecnologia">Tecnologia BioSkin®</a>
+      <a href="#" class="category-pill" data-category="anti-aging">Anti-Aging</a>
+      <a href="#" class="category-pill" data-category="tratamentos">Tratamentos</a>
+      <a href="#" class="category-pill" data-category="ciencia">Ciência & Estudos</a>
+      <a href="#" class="category-pill" data-category="rotina">Rotina de Cuidados</a>
+    </div>
+  </section>
+
+  <!-- Posts Grid -->
+  <section class="posts-section">
+    <div class="posts-grid">
+      
+      <!-- Post 1 -->
+      <a href="posts/revolucao-bioskin.html" class="post-card" data-category="tecnologia">
+        <div class="post-image">🧬</div>
+        <div class="post-content">
+          <span class="post-category">Tecnologia BioSkin®</span>
+          <h2 class="post-title">A Revolução da Biotecnologia no Cuidado com a Pele</h2>
+          <p class="post-description">
+            Descubra como a tecnologia BioSkin® está transformando o tratamento dermatológico com resultados clinicamente comprovados em apenas 21 dias.
+          </p>
+          <div class="post-meta">
+            <div class="post-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.9</span>
+            </div>
+            <span class="post-read-time">8 min de leitura</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 2 -->
+      <a href="posts/rejuvenescimento-celular.html" class="post-card" data-category="anti-aging">
+        <div class="post-image">⚡</div>
+        <div class="post-content">
+          <span class="post-category">Anti-Aging</span>
+          <h2 class="post-title">Rejuvenescimento Celular: O Fim das Rugas Profundas?</h2>
+          <p class="post-description">
+            Estudos revelam: mulheres acima de 45 anos conseguem reduzir até 73% das linhas de expressão com este método revolucionário.
+          </p>
+          <div class="post-meta">
+            <div class="post-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.8</span>
+            </div>
+            <span class="post-read-time">10 min de leitura</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 3 -->
+      <a href="posts/manchas-desaparecem.html" class="post-card" data-category="tratamentos">
+        <div class="post-image">✨</div>
+        <div class="post-content">
+          <span class="post-category">Tratamentos</span>
+          <h2 class="post-title">Por Que Suas Manchas Não Desaparecem (E Como Resolver Isso)</h2>
+          <p class="post-description">
+            O erro que 89% das mulheres cometem no tratamento de manchas e a solução científica que dermatologistas recomendam.
+          </p>
+          <div class="post-meta">
+            <div class="post-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.9</span>
+            </div>
+            <span class="post-read-time">7 min de leitura</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 4 -->
+      <a href="posts/colageno-verdade.html" class="post-card" data-category="ciencia">
+        <div class="post-image">🔬</div>
+        <div class="post-content">
+          <span class="post-category">Ciência & Estudos</span>
+          <h2 class="post-title">A Verdade Sobre o Colágeno Que a Indústria Não Conta</h2>
+          <p class="post-description">
+            Pesquisa de Harvard revela: 9 em cada 10 produtos de colágeno não funcionam. Entenda o porquê e conheça a alternativa eficaz.
+          </p>
+          <div class="post-meta">
+            <div class="post-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.7</span>
+            </div>
+            <span class="post-read-time">12 min de leitura</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Post 5 -->
+      <a href="posts/rotina-30-dias.html" class="post-card" data-category="rotina">
+        <div class="post-image">💎</div>
+        <div class="post-content">
+          <span class="post-category">Rotina de Cuidados</span>
+          <h2 class="post-title">A Rotina de 30 Dias Que Virou Tendência Entre Celebridades</h2>
+          <p class="post-description">
+            Descubra o protocolo científico que celebridades usam para manter a pele jovem, mesmo após os 50 anos. Passo a passo completo.
+          </p>
+          <div class="post-meta">
+            <div class="post-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.9</span>
+            </div>
+            <span class="post-read-time">9 min de leitura</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Scientific Skin Tech. Todos os direitos reservados.</p>
+    <p style="margin-top: 10px;">
+      <a href="../LocalView/index.html">Voltar para produtos</a> | 
+      <a href="mailto:contato@kazai.com.br">contato@kazai.com.br</a>
+    </p>
+  </footer>
+
+  <script>
+    // Category filter
+    const categoryPills = document.querySelectorAll('.category-pill');
+    const postCards = document.querySelectorAll('.post-card');
+    
+    categoryPills.forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Update active state
+        categoryPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        
+        const category = pill.dataset.category;
+        
+        // Filter posts
+        postCards.forEach(card => {
+          if (category === 'todos' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

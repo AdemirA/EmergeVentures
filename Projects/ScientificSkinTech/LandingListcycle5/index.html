@@ -26,24 +26,31 @@
       --success: #00a86b;
     }
     
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--dark);
-      line-height: 1.6;
-      background: #fff;
+    :root {
+      --brand: #c4170c;
+      --brand-2: #8b1008;
+      --bg: #faf8f5;
+      --text: #1a1a1a;
+      --muted: #666;
+      --border: #e5e5e5;
+      --accent: #f5f5f0;
+      --success: #00a86b;
+      --warning: #f59e0b;
+      --star: #fbbf24;
+      /* Scientific Skin Pantone */
+      --pantone-cool-grey-6: #b1b3b6;
+      --pantone-cool-grey-10: #75787b;
+      --pantone-cool-grey-11: #53565a;
+      --pantone-180c: #c75b2c;
+      --pantone-600c: #f7ecb5;
+      --pantone-804c: #ffd1a9;
+      --pantone-502c: #f7cdd0;
+      --pantone-664c: #dbe2ee;
+      --pantone-544c: #a7c7e7;
+      --pantone-5575c: #8caea3;
+      --pantone-white: #fff;
     }
-    
-    /* Header */
-    .header {
-      background: #fff;
-      padding: 20px 30px;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-      background: rgba(255,255,255,0.95);
-    }
+    /* Removido bloco solto com propriedades inválidas */
     
     .header-content {
       max-width: 1200px;
@@ -710,7 +717,7 @@
       <p class="subtitle">Desenvolvida pelo Dr. Rafael Arpini, a tecnologia BioSkin® está redefinindo os padrões de eficácia dos dermocosméticos ao ativar o poder regenerativo natural da pele.</p>
     </div>
   </section>
-
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Section 1: Comparison -->
   <section class="section">
     <div class="container">
@@ -734,17 +741,66 @@
               <td>Regenerativa, atua na comunicação celular</td>
             </tr>
             <tr>
+      /* Topbar */
+      .topbar {
+        background: var(--text);
+        color: #fff;
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        z-index: 200;
+      }
+      .topbar-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+      }
+      .nav {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+      .nav-link {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: background 0.2s;
+      }
+      .nav-link:hover {
+        background: var(--brand);
+        color: #fff;
+      }
               <td>Ingredientes</td>
               <td>Ácidos e derivados sintéticos</td>
               <td>Biomiméticos, prebióticos e peptídeos inteligentes</td>
             </tr>
             <tr>
-              <td>Compatibilidade</td>
-              <td>Pode sensibilizar</td>
-              <td>Alta tolerância para todos os tipos de pele</td>
-            </tr>
-            <tr>
-              <td>Resultados</td>
+    <!-- Topbar / Menu -->
+    <div class="topbar">
+      <div class="topbar-content">
+        <div class="logo">SCIENTIFIC SKIN TECH</div>
+        <nav class="nav">
+          <a class="nav-link" href="/Projects/ScientificSkinTech/LandingAdvertorial/index.html">Advertorial</a>
+          <a class="nav-link" href="/Projects/ScientificSkinTech/LandingListcycle/index.html">Listcycle</a>
+          <a class="nav-link" href="/Projects/ScientificSkinTech/LandingComparativa/index.html">Comparativa</a>
+          <a class="nav-link" href="/Projects/ScientificSkinTech/LandingAdvertorialDaniel/index.html">Editorial</a>
+          <a class="nav-link" href="/Projects/ScientificSkinTech/LandingListcycleDaniel/index.html">Comparativo</a>
+        </nav>
+      </div>
+    </div>
               <td>Temporários</td>
               <td>Progressivos e duradouros</td>
             </tr>

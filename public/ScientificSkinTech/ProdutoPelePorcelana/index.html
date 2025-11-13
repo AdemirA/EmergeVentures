@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pele de Porcelana - Scientific Skin Tech | Kit Dia e Noite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c4170c;
+      --primary-dark: #a01309;
+      --dark: #1a1a1a;
+      --gray: #666;
+      --light-gray: #f5f5f5;
+      --cream: #faf8f5;
+      --success: #10b981;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      background: #fff;
+    }
+    
+    /* Header Fixed */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(10px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(196,23,12,0.1);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+    
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .header-cta {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .header-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(196,23,12,0.3);
+    }
+    
+    /* Hero Section */
+    .hero {
+      margin-top: 80px;
+      padding: 80px 40px;
+      background: linear-gradient(135deg, var(--cream) 0%, #fff 100%);
+    }
+    
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      border-radius: 30px;
+    }
+    
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    
+    .hero-subtitle {
+      font-size: 22px;
+      color: var(--gray);
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    
+    .social-proof {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 35px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    
+    .stars {
+      color: #fbbf24;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+    
+    .social-proof-text {
+      font-size: 14px;
+      color: var(--gray);
+    }
+    
+    .social-proof-number {
+      font-weight: 700;
+      color: var(--dark);
+    }
+    
+    .hero-image {
+      position: relative;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    
+    .price-badge {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(196,23,12,0.4);
+    }
+    
+    .price-badge .old-price {
+      font-size: 18px;
+      text-decoration: line-through;
+      opacity: 0.8;
+      display: block;
+    }
+    
+    .price-badge .new-price {
+      font-family: 'Outfit', sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      display: block;
+    }
+    
+    .price-badge .discount {
+      font-size: 14px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    
+    /* Kits Section */
+    .kits {
+      padding: 100px 40px;
+      background: #fff;
+    }
+    
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: var(--gray);
+      margin-bottom: 60px;
+    }
+    
+    .kits-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    
+    .kit-card {
+      background: var(--cream);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+      border: 3px solid transparent;
+    }
+    
+    .kit-card.popular {
+      border-color: var(--primary);
+      transform: scale(1.05);
+      background: #fff;
+      box-shadow: 0 20px 50px rgba(196,23,12,0.15);
+    }
+    
+    .kit-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      padding: 6px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 20px;
+    }
+    
+    .kit-image {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      margin-bottom: 25px;
+    }
+    
+    .kit-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .kit-savings {
+      background: #10b981;
+      color: #fff;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .kit-price {
+      margin-bottom: 25px;
+    }
+    
+    .kit-old-price {
+      font-size: 18px;
+      color: var(--gray);
+      text-decoration: line-through;
+      display: block;
+    }
+    
+    .kit-new-price {
+      font-family: 'Outfit', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+    
+    .kit-cta {
+      display: block;
+      background: var(--primary);
+      color: #fff;
+      padding: 18px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .kit-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(196,23,12,0.3);
+    }
+    
+    /* Benefits */
+    .benefits {
+      padding: 100px 40px;
+      background: var(--dark);
+      color: #fff;
+    }
+    
+    .benefits-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .benefit-card {
+      text-align: center;
+    }
+    
+    .benefit-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      font-size: 36px;
+    }
+    
+    .benefit-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    
+    .benefit-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    /* Results */
+    .results {
+      padding: 100px 40px;
+      background: var(--cream);
+    }
+    
+    .results-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .result-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    
+    .result-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 64px;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .result-label {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 100px 40px;
+      background: #fff;
+    }
+    
+    .testimonials-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .testimonial-card {
+      background: var(--cream);
+      padding: 35px;
+      border-radius: 15px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 18px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+    
+    .testimonial-text {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: var(--dark);
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .author-info {
+      flex: 1;
+    }
+    
+    .author-name {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 15px;
+    }
+    
+    .author-age {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    
+    /* Ingredients */
+    .ingredients {
+      padding: 100px 40px;
+      background: var(--dark);
+      color: #fff;
+    }
+    
+    .ingredients-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    
+    .ingredient-card {
+      background: rgba(255,255,255,0.05);
+      padding: 35px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .ingredient-badge {
+      background: var(--primary);
+      color: #fff;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    
+    .ingredient-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .ingredient-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    /* Final CTA */
+    .final-cta {
+      padding: 120px 40px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      text-align: center;
+    }
+    
+    .final-cta-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    
+    .final-cta-text {
+      font-size: 22px;
+      margin-bottom: 40px;
+      opacity: 0.95;
+    }
+    
+    .final-cta-button {
+      display: inline-block;
+      background: #fff;
+      color: var(--primary);
+      padding: 22px 60px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .final-cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-container,
+      .kits-grid,
+      .benefits-grid,
+      .results-grid,
+      .testimonials-grid,
+      .ingredients-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-title {
+        font-size: 38px;
+      }
+      
+      .kit-card.popular {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Scientific Skin Tech</div>
+  <a href="https://scientificskintech.com.br/products/pele-de-porcelana-1?variant=50080877248834" class="header-cta" style="background: linear-gradient(90deg,#e3b062,#f7e7c6); color:#1a1a1a; font-weight:700; border-radius:8px;">Comprar Pele de Porcelana da Scientific Skin Tech →</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-container">
+      <div>
+        <span class="hero-badge">🇧🇷 Tecnologia Brasileira</span>
+        <h1 class="hero-title">Pele de Porcelana</h1>
+  <p class="hero-subtitle">Suaviza rugas, linhas e poros com ácido hialurônico e octapeptídeo em uma rotina dia e noite.<br><span style="font-size:1.1rem;color:#e3b062;font-weight:600;">Marca líder em biotecnologia: Scientific Skin Tech</span></p>
+        
+        <div class="social-proof">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <div>
+            <div class="social-proof-number">+ de 20.000 consumidores</div>
+            <div class="social-proof-text">Avaliado com 5.0 baseado em 34 avaliações</div>
+          </div>
+        </div>
+        
+  <a href="https://scientificskintech.com.br/products/pele-de-porcelana-1?variant=50080877248834" class="header-cta" style="display: inline-block; padding: 20px 50px; font-size: 18px; background: linear-gradient(90deg,#e3b062,#f7e7c6); color:#1a1a1a; font-weight:700; border-radius:8px;">Comprar Pele de Porcelana da Scientific Skin Tech →</a>
+      </div>
+      
+      <div class="hero-image">
+        <img src="https://scientificskintech.com.br/cdn/shop/files/KIT_01.png?v=1761944698&width=600" alt="Pele de Porcelana Kit">
+  <!-- Destaque visual para a marca -->
+  <div style="margin-top:12px;font-size:1rem;color:#4e4e4e;text-align:center;font-weight:500;">Exclusivo da <span style="color:#e3b062;font-weight:700;">Scientific Skin Tech</span></div>
+        <div class="price-badge">
+          <span class="old-price">R$ 498,00</span>
+          <span class="new-price">R$ 399</span>
+          <span class="discount">20% OFF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kits -->
+  <section class="kits">
+    <h2 class="section-title">Escolha Seu Kit</h2>
+    <p class="section-subtitle">Quanto mais você cuida, mais você economiza</p>
+    
+    <div class="kits-grid">
+      <!-- Kit 1 -->
+      <div class="kit-card">
+        <img src="https://scientificskintech.com.br/cdn/shop/files/KIT_01.png?v=1761944698&width=300" alt="1 Kit" class="kit-image">
+        <h3 class="kit-title">1 KIT</h3>
+        <div class="kit-price">
+          <span class="kit-new-price">R$ 249</span>
+        </div>
+        <a href="https://scientificskintech.com.br/products/pele-de-porcelana-1?variant=50080877248834" class="kit-cta">Comprar Agora</a>
+      </div>
+      
+      <!-- Kit 2 - Popular -->
+      <div class="kit-card popular">
+        <span class="kit-badge">MAIS VENDIDO</span>
+        <img src="https://scientificskintech.com.br/cdn/shop/files/KIT_02.png?v=1761944698&width=300" alt="2 Kits" class="kit-image">
+        <h3 class="kit-title">2 KITS</h3>
+        <span class="kit-savings">Economize 20%</span>
+        <div class="kit-price">
+          <span class="kit-old-price">R$ 498,00</span>
+          <span class="kit-new-price">R$ 399</span>
+        </div>
+        <a href="https://scientificskintech.com.br/products/pele-de-porcelana-1?variant=50080877248834" class="kit-cta">Comprar Agora</a>
+      </div>
+      
+      <!-- Kit 3 -->
+      <div class="kit-card">
+        <img src="https://scientificskintech.com.br/cdn/shop/files/KIT_03.png?v=1761944698&width=300" alt="3 Kits" class="kit-image">
+        <h3 class="kit-title">3 KITS</h3>
+        <span class="kit-savings">Economize 34%</span>
+        <div class="kit-price">
+          <span class="kit-old-price">R$ 747,00</span>
+          <span class="kit-new-price">R$ 499</span>
+        </div>
+        <a href="https://scientificskintech.com.br/products/pele-de-porcelana-1?variant=50080877248834" class="kit-cta">Comprar Agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <h2 class="section-title" style="color: #fff;">O Que Você Vai Conquistar</h2>
+    <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Resultados visíveis já nas primeiras semanas</p>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">✨</div>
+        <h3 class="benefit-title">Preenche</h3>
+        <p class="benefit-text">Suaviza rugas e linhas finas com ácido hialurônico fracionado de alta pureza</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <h3 class="benefit-title">Uniformiza</h3>
+        <p class="benefit-text">Minimiza poros visíveis e uniformiza a textura da pele com octapeptídeo</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">💎</div>
+        <h3 class="benefit-title">Rejuvenesce</h3>
+        <p class="benefit-text">Estimula produção de colágeno e ácido hialurônico endógeno</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="results">
+    <div class="results-container">
+      <h2 class="section-title">Resultados Comprovados</h2>
+      <p class="section-subtitle">Com eficácia validada em pacientes e certificação ANVISA</p>
+      
+      <div class="results-grid">
+        <div class="result-card">
+          <span class="result-number">81%</span>
+          <p class="result-label">Efeito preenchedor</p>
+        </div>
+        
+        <div class="result-card">
+          <span class="result-number">78%</span>
+          <p class="result-label">Redução de poros</p>
+        </div>
+        
+        <div class="result-card">
+          <span class="result-number">78%</span>
+          <p class="result-label">Consideram o melhor para rugas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2 class="section-title">Quem Usa, Recomenda</h2>
+    <p class="section-subtitle">Mais de 20.000 clientes satisfeitos em todo o Brasil</p>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Aos meus 34 anos finalmente achei os produtos que estão me ajudando a enxergar o resultado logo no primeiro dia. Tenho linhas finas de expressão na testa. E confesso que sinto elas mais suaves a cada dia."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">F</div>
+          <div class="author-info">
+            <div class="author-name">Flávia</div>
+            <div class="author-age">34 anos</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Confesso que fiquei insegura porque apostei no que li na especificação dos produtos. Em duas semanas já percebo minha pele com melhoria na textura, rigidez, linhas de expressão!! Tenho 65 anos, nunca fiz nenhum procedimento estético."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">E</div>
+          <div class="author-info">
+            <div class="author-name">Eda L.</div>
+            <div class="author-age">65 anos</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Este Serum é simplesmente maravilhoso, se adaptou perfeitamente a minha pele, deixando um sensorial de pele perfeita, firme e hidratada. Muito fácil de aplicar e gostei muito da embalagem de seringa."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">D</div>
+          <div class="author-info">
+            <div class="author-name">Daniele S.</div>
+            <div class="author-age">Comprador verificado</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Eu amei a aderência do produto, meu rosto ficou lindo, adiei os procedimentos mais invasivos. O produto cumpre o que promete. Entregou mais do que eu esperava. Tenho 32 anos com rostinho de 22."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">I</div>
+          <div class="author-info">
+            <div class="author-name">Isabela R.</div>
+            <div class="author-age">32 anos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ingredients -->
+  <section class="ingredients">
+    <h2 class="section-title" style="color: #fff;">12 Ativos Calmantes e Purificantes</h2>
+    <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Com os peptídeos mais avançados do mundo no protocolo dia e noite</p>
+    
+    <div class="ingredients-grid">
+      <div class="ingredient-card">
+        <span class="ingredient-badge">DIA - Sérum Preenchedor</span>
+        <h3 class="ingredient-title">Ácido Hialurônico Fracionado</h3>
+        <p class="ingredient-text">Proveniente dos EUA, o mais puro do mercado, hidrata profundamente e reduz rugas, fortalecendo a barreira cutânea.</p>
+      </div>
+      
+      <div class="ingredient-card">
+        <span class="ingredient-badge">DIA - Sérum Preenchedor</span>
+        <h3 class="ingredient-title">Peptídeo Estimulador Endógeno</h3>
+        <p class="ingredient-text">Syn-Hycan da Holanda aumenta os níveis de ácido hialurônico e colágeno, melhorando elasticidade e firmeza.</p>
+      </div>
+      
+      <div class="ingredient-card">
+        <span class="ingredient-badge">NOITE - Sérum Controle</span>
+        <h3 class="ingredient-title">Octapeptídeo</h3>
+        <p class="ingredient-text">Minimiza poros e linhas de expressão, controlando oleosidade e refinando a textura da pele.</p>
+      </div>
+      
+      <div class="ingredient-card">
+        <span class="ingredient-badge">NOITE - Sérum Controle</span>
+        <h3 class="ingredient-title">Peptídeo Retinol-like</h3>
+        <p class="ingredient-text">Phimalhyal da Suíça renova células e estimula colágeno, reduzindo rugas e manchas sem irritação.</p>
+      </div>
+      
+      <div class="ingredient-card">
+        <span class="ingredient-badge">BIOSKIN®</span>
+  <h3 class="ingredient-title">Prebióticos</h3>
+  <p class="ingredient-text">Promovem saúde e equilíbrio imunológico da pele, fortalecendo a barreira cutânea.<br><span style="color:#e3b062;font-weight:600;">Tecnologia exclusiva BioSkin® da Scientific Skin Tech</span></p>
+      </div>
+      
+      <div class="ingredient-card">
+        <span class="ingredient-badge">BIOSKIN®</span>
+  <h3 class="ingredient-title">Peptídeo Antiglicante</h3>
+  <p class="ingredient-text">Protege contra danos causados pelo açúcar, prevenindo envelhecimento precoce.<br><span style="color:#e3b062;font-weight:600;">Tecnologia exclusiva BioSkin® da Scientific Skin Tech</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2 class="final-cta-title">Comece Sua Transformação Hoje</h2>
+    <p class="final-cta-text">Junte-se a mais de 20.000 pessoas que já conquistaram uma pele de porcelana</p>
+  <p class="final-cta-text">Junte-se a mais de 20.000 pessoas que já conquistaram uma pele de porcelana com a marca líder em biotecnologia: <strong>Scientific Skin Tech</strong></p>
+  <a href="https://scientificskintech.com.br/products/pele-de-porcelana-1?variant=50080877248834" class="final-cta-button" style="background:linear-gradient(90deg,#e3b062,#f7e7c6);color:#1a1a1a;font-weight:700;">Comprar Pele de Porcelana da Scientific Skin Tech →</a>
+    
+    <div style="margin-top: 40px; opacity: 0.9;">
+      <p style="font-size: 14px; margin-bottom: 10px;">✓ Frete grátis acima de R$99</p>
+      <p style="font-size: 14px; margin-bottom: 10px;">✓ Até 6x sem juros no cartão</p>
+      <p style="font-size: 14px;">✓ Desenvolvido por médico dermatologista</p>
+    </div>
+  </section>
+
+</body>
+</html>

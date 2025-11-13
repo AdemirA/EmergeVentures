@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioSkin® vs Fórmulas Internacionais | Scientific Skin Tech</title>
+  <meta name="description" content="Por que a tecnologia brasileira está superando as fórmulas internacionais em resultados reais de pele">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --brand: #c4170c;
+      --brand-2: #8b1008;
+      --bg: #faf8f5;
+      --text: #1a1a1a;
+      --muted: #666;
+      --border: #e5e5e5;
+      --accent: #f5f5f0;
+      --success: #00a86b;
+      --warning: #f59e0b;
+      --star: #fbbf24;
+      /* Scientific Skin Pantone */
+      --pantone-cool-grey-6: #b1b3b6;
+      --pantone-cool-grey-10: #75787b;
+      --pantone-cool-grey-11: #53565a;
+      --pantone-180c: #c75b2c;
+      --pantone-600c: #f7ecb5;
+      --pantone-804c: #ffd1a9;
+      --pantone-502c: #f7cdd0;
+      --pantone-664c: #dbe2ee;
+      --pantone-544c: #a7c7e7;
+      --pantone-5575c: #8caea3;
+      --pantone-white: #fff;
+    }
+    
+    body {
+      font-family: 'Crimson Pro', serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: #fff;
+      font-size: 19px;
+    }
+    /* Topbar */
+    .topbar {
+      background: var(--text);
+      color: #fff;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .topbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .nav-link:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+    
+    /* Topbar */
+    .topbar {
+      background: var(--text);
+      color: #fff;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    
+    .topbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    
+    .share-buttons {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    
+    .share-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.6;
+      margin-right: 5px;
+    }
+    
+    .share-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    
+    .share-btn:hover {
+      background: var(--brand);
+      transform: translateY(-2px);
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+    
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--bg) 0%, #fff 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      color: var(--text);
+      letter-spacing: -1px;
+      max-width: 950px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .subtitle {
+      font-size: 22px;
+      line-height: 1.5;
+      color: var(--muted);
+      max-width: 750px;
+      margin: 0 auto 50px;
+      font-weight: 400;
+    }
+    
+    /* Section */
+    .section {
+      padding: 100px 0;
+    }
+    
+    .section-dark {
+      background: var(--text);
+      color: #fff;
+    }
+    
+    .section-light {
+      background: var(--bg);
+    }
+    
+    .section-number {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 30px;
+      letter-spacing: -0.5px;
+    }
+    
+    .section-intro {
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 60px;
+      max-width: 900px;
+    }
+    
+    .section-dark .section-intro,
+    .section-dark h2 {
+      color: #fff;
+    }
+    
+    .section-dark .section-intro {
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .section-dark .section-number {
+      color: var(--brand);
+    }
+    
+    /* Content Grid (2 columns with sidebar) */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    
+    /* Comparison Table */
+    .comparison-table {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+    
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .comparison-table th {
+      background: var(--text);
+      color: #fff;
+      padding: 20px 30px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .comparison-table th:first-child {
+      width: 30%;
+      background: var(--brand);
+    }
+    
+    .comparison-table th:nth-child(2) {
+      background: #666;
+    }
+    
+    .comparison-table th:last-child {
+      background: var(--success);
+    }
+    
+    .comparison-table td {
+      padding: 25px 30px;
+      border-bottom: 1px solid var(--border);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table td:first-child {
+      font-weight: 700;
+      color: var(--text);
+      background: #fafafa;
+    }
+    
+    .comparison-table td:nth-child(2) {
+      color: var(--muted);
+    }
+    
+    .comparison-table td:last-child {
+      color: var(--text);
+      font-weight: 600;
+      background: #f0fdf4;
+    }
+    
+    .table-caption {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      padding: 30px;
+      background: #fef7e0;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    
+    /* Visual Metrics Grid */
+    .visual-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 60px 0;
+    }
+    
+    .metric-card {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(196, 23, 12, 0.2);
+    }
+    
+    .metric-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    .metric-value {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    
+    .metric-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+    
+    /* Before After Grid */
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 60px 0;
+    }
+    
+    .ba-item {
+      text-align: center;
+    }
+    
+    .ba-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: var(--muted);
+    }
+    
+    .ba-image {
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f0f0f0;
+      border: 3px solid #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .ba-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .ba-caption {
+      margin-top: 15px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 60px 0;
+    }
+    
+    .product-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .product-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+    }
+    
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--brand);
+      color: #fff;
+      padding: 5px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-radius: 20px;
+    }
+    
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--bg);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .product-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    
+    .product-description {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .product-price {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--brand);
+      margin-bottom: 15px;
+    }
+    
+    /* Quote Block */
+    .quote-block {
+      background: var(--accent);
+      padding: 50px;
+      border-left: 4px solid var(--brand);
+      margin: 60px 0;
+      border-radius: 8px;
+    }
+    
+    .quote-text {
+      font-size: 28px;
+      line-height: 1.5;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    
+    .quote-author {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--brand);
+    }
+    
+    /* FAQ */
+    .faq {
+      max-width: 800px;
+      margin: 60px 0;
+    }
+    
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 15px;
+      overflow: hidden;
+    }
+    
+    .faq-item details {
+      cursor: pointer;
+    }
+    
+    .faq-item summary {
+      padding: 25px 30px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      transition: all 0.2s;
+    }
+    
+    .faq-item summary:hover {
+      background: var(--bg);
+    }
+    
+    .faq-item summary::before {
+      content: '+';
+      float: right;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--brand);
+    }
+    
+    .faq-item[open] summary::before {
+      content: '−';
+    }
+    
+    .faq-content {
+      padding: 0 30px 25px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+    }
+    
+    .sidebar-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    
+    .sidebar-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    /* Offer Card */
+    .offer-card {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff;
+      text-align: center;
+    }
+    
+    .offer-badge {
+      background: rgba(255,255,255,0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    
+    .offer-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+    
+    .offer-price {
+      margin: 25px 0;
+    }
+    
+    .old-price {
+      font-size: 18px;
+      text-decoration: line-through;
+      opacity: 0.7;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .current-price {
+      font-size: 42px;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .installment {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    /* Guarantee Card */
+    .guarantee-card {
+      text-align: center;
+    }
+    
+    .guarantee-badge {
+      width: 80px;
+      height: 80px;
+      background: var(--success);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 20px;
+    }
+    
+    .guarantee-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--success);
+    }
+    
+    .guarantee-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    
+    /* Ratings Card */
+    .ratings-card {
+      text-align: center;
+    }
+    
+    .stars {
+      font-size: 24px;
+      color: var(--star);
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+    
+    .rating-score {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    
+    .rating-count {
+      font-size: 14px;
+      color: var(--muted);
+    }
+    
+    /* CTA Buttons */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+    
+    .btn-primary:hover {
+      background: var(--brand-2);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(196, 23, 12, 0.3);
+    }
+    
+    .btn-secondary {
+      background: #fff;
+      color: var(--brand);
+      border: 2px solid var(--brand);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+    
+    .btn-large {
+      padding: 20px 40px;
+      font-size: 18px;
+    }
+    
+    /* Sticky CTA Bar */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 15px 0;
+      z-index: 100;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    }
+    
+    .sticky-cta-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+    
+    .sticky-cta-text {
+      flex: 1;
+    }
+    
+    .sticky-cta-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    
+    .sticky-cta-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    
+    .sticky-cta .btn {
+      width: auto;
+      padding: 14px 40px;
+      white-space: nowrap;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 0 40px;
+      margin-top: 100px;
+      margin-bottom: 80px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h4 {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .footer-column p,
+    .footer-column a {
+      font-size: 14px;
+      line-height: 2;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      display: block;
+    }
+    
+    .footer-column a:hover {
+      color: #fff;
+    }
+    
+    .footer-bottom {
+      font-size: 13px;
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .topbar-content {
+        padding: 0 20px;
+      }
+      
+      .container {
+        padding: 0 20px;
+      }
+      
+      h1 {
+        font-size: 36px;
+      }
+      
+      h2 {
+        font-size: 32px;
+      }
+      
+      .subtitle {
+        font-size: 18px;
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
+      
+      .section-intro {
+        font-size: 18px;
+      }
+      
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .sidebar {
+        position: static;
+      }
+      
+      .visual-metrics {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .before-after-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .sticky-cta-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+      }
+      
+      .sticky-cta .btn {
+        width: 100%;
+      }
+      
+      .share-label {
+        display: none;
+      }
+      
+      .quote-text {
+        font-size: 22px;
+      }
+      
+      .comparison-table th,
+      .comparison-table td {
+        padding: 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar / Menu -->
+  <div class="topbar">
+    <div class="topbar-content">
+      <div class="logo">SCIENTIFIC SKIN TECH</div>
+      <nav class="nav">
+        <a class="nav-link" href="/Projects/ScientificSkinTech/LandingAdvertorial/index.html">Advertorial</a>
+        <a class="nav-link" href="/Projects/ScientificSkinTech/LandingListcycle/index.html">Listcycle</a>
+        <a class="nav-link" href="/Projects/ScientificSkinTech/LandingComparativa/index.html">Comparativa</a>
+        <a class="nav-link" href="/Projects/ScientificSkinTech/LandingAdvertorialDaniel/index.html">Editorial</a>
+        <a class="nav-link" href="/Projects/ScientificSkinTech/LandingListcycleDaniel/index.html">Comparativo</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">Comparativo Científico</div>
+      <h1>Por que a tecnologia brasileira está superando as fórmulas internacionais em resultados reais de pele</h1>
+      <p class="subtitle">Desenvolvida pelo Dr. Rafael Arpini, a tecnologia BioSkin® está redefinindo os padrões de eficácia dos dermocosméticos ao ativar o poder regenerativo natural da pele.</p>
+    </div>
+  </section>
+
+  <!-- Section: Comparison -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-number">01 • Comparativo</div>
+      <h2>BioSkin® vs. Ativos Internacionais</h2>
+      <p class="section-intro">Durante anos, você pagou caro por dermocosméticos importados que prometiam revolução e entregavam, no máximo, hidratação básica. Marcas europeias cobravam até <strong>R$ 800 por um frasco de 30ml</strong>, mas a tecnologia por trás? Mesma fórmula desde os anos 90. A tecnologia <strong>BioSkin®</strong>, desenvolvida no Brasil com pesquisa de ponta, está entregando <strong>resultados de consultório em casa por 1/3 do preço</strong>, com estudos clínicos que as grandes marcas se recusam a publicar.</p>
+
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th>Fórmulas Internacionais</th>
+              <th>BioSkin® (Nacional)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tempo de penetração</td>
+              <td>2-4 horas (superficial)</td>
+              <td>72 horas (liberação gradual profunda)</td>
+            </tr>
+            <tr>
+              <td>Taxa de absorção</td>
+              <td>8-15% dos ativos</td>
+              <td>87% dos ativos (lipossomas biomembranares)</td>
+            </tr>
+            <tr>
+              <td>Início dos resultados</td>
+              <td>4-8 semanas</td>
+              <td>7-14 dias</td>
+            </tr>
+            <tr>
+              <td>Irritação cutânea</td>
+              <td>Comum (altas concentrações)</td>
+              <td>Rara (micro-dosagens inteligentes)</td>
+            </tr>
+            <tr>
+              <td>Preço médio (30ml)</td>
+              <td>R$ 450 - R$ 800</td>
+              <td>R$ 297 (kit completo 3 produtos)</td>
+            </tr>
+            <tr>
+              <td>Garantia de resultado</td>
+              <td>Nenhuma</td>
+              <td>30 dias ou dinheiro de volta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-caption">
+        Em outras palavras: enquanto os cosméticos tradicionais cobrem a pele, a BioSkin® ensina a pele a se regenerar.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Visual Metrics -->
+  <section class="section">
+    <div class="container">
+      <div class="section-number">02 • Eficácia Comprovada</div>
+      <h2>Números Que Falam Por Si</h2>
+      
+      <div class="visual-metrics">
+        <div class="metric-card">
+          <span class="metric-icon">💧</span>
+          <div class="metric-value">87%</div>
+          <div class="metric-label">Taxa de Absorção</div>
+        </div>
+        <div class="metric-card">
+          <span class="metric-icon">⏱️</span>
+          <div class="metric-value">72h</div>
+          <div class="metric-label">Ação Prolongada</div>
+        </div>
+        <div class="metric-card">
+          <span class="metric-icon">🧬</span>
+          <div class="metric-value">12</div>
+          <div class="metric-label">Ativos Biomim.</div>
+        </div>
+      </div>
+
+      <p class="section-intro" style="margin-top: 40px;">Esses não são números de marketing. São resultados de testes clínicos realizados em mais de 3.000 mulheres, com acompanhamento dermatológico rigoroso. A BioSkin® não apenas promete — ela comprova.</p>
+    </div>
+  </section>
+
+  <!-- Section: Before/After + Sidebar -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="content-grid">
+        
+        <!-- Main Content -->
+        <div>
+          <div class="section-number">03 • Resultados Reais</div>
+          <h2>Transformação em 8 Semanas</h2>
+          <p class="section-intro">Veja como a tecnologia BioSkin® entrega resultados visíveis e duradouros, sem necessidade de procedimentos invasivos ou produtos caros.</p>
+
+          <div class="before-after-grid">
+            <div class="ba-item">
+              <div class="ba-label">Antes</div>
+              <div class="ba-image">
+                <img src="../../../assets/pele-de-porcelana/antes.png" alt="Antes do tratamento">
+              </div>
+              <p class="ba-caption">Pele com rugas profundas, manchas e flacidez</p>
+            </div>
+            <div class="ba-item">
+              <div class="ba-label">Depois de 8 semanas</div>
+              <div class="ba-image">
+                <img src="../../../assets/pele-de-porcelana/depois.png" alt="Depois do tratamento">
+              </div>
+              <p class="ba-caption">Pele firme, uniforme e com aparência rejuvenescida</p>
+            </div>
+          </div>
+
+          <div class="quote-block">
+            <p class="quote-text">"A BioSkin® não tenta substituir a pele. Ela apenas ativa o que ela já sabe fazer de melhor."</p>
+            <p class="quote-author">— Dr. Rafael Arpini</p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          
+          <!-- Offer Card -->
+          <div class="sidebar-card offer-card">
+            <div class="offer-badge">Oferta Limitada</div>
+            <h3 class="offer-title">Pele de Porcelana<br>Kit Completo</h3>
+            <div class="offer-price">
+              <span class="old-price">De R$ 597</span>
+              <span class="current-price">R$ 297</span>
+              <span class="installment">ou 12x de R$ 29,12</span>
+            </div>
+            <a href="#" class="btn btn-secondary">Garantir com Desconto</a>
+          </div>
+
+          <!-- Guarantee Card -->
+          <div class="sidebar-card guarantee-card">
+            <div class="guarantee-badge">✓</div>
+            <h3 class="guarantee-title">Garantia de 30 Dias</h3>
+            <p class="guarantee-text">Se você não ficar satisfeita com os resultados, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+          </div>
+
+          <!-- Ratings Card -->
+          <div class="sidebar-card ratings-card">
+            <div class="stars">★★★★★</div>
+            <div class="rating-score">4.8</div>
+            <p class="rating-count">Baseado em 2.847 avaliações</p>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Products -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-number">04 • Produtos</div>
+      <h2>Conheça a Linha Pele de Porcelana</h2>
+      <p class="section-intro">Cada produto foi desenvolvido com a tecnologia BioSkin® para entregar resultados sinérgicos e potencializados.</p>
+
+      <div class="product-grid">
+        
+        <div class="product-item">
+          <span class="product-badge">BioSkin®</span>
+          <div class="product-image">
+            <img src="../../../assets/pele-de-porcelana/kit_01_1080.png" alt="Sérum Intensivo">
+          </div>
+          <h3 class="product-name">Sérum Intensivo</h3>
+          <p class="product-description">Concentrado de ativos biomembranares que penetram profundamente na pele.</p>
+          <div class="product-price">R$ 147</div>
+          <a href="#" class="btn btn-primary">Adicionar ao Kit</a>
+        </div>
+
+        <div class="product-item">
+          <span class="product-badge">BioSkin®</span>
+          <div class="product-image">
+            <img src="../../../assets/pele-de-porcelana/kit_02.png" alt="Creme Regenerador">
+          </div>
+          <h3 class="product-name">Creme Regenerador</h3>
+          <p class="product-description">Potencializa a regeneração celular e firma a pele durante a noite.</p>
+          <div class="product-price">R$ 127</div>
+          <a href="#" class="btn btn-primary">Adicionar ao Kit</a>
+        </div>
+
+        <div class="product-item">
+          <span class="product-badge">BioSkin®</span>
+          <div class="product-image">
+            <img src="../../../assets/pele-de-porcelana/kit_03.png" alt="Gel de Limpeza">
+          </div>
+          <h3 class="product-name">Gel de Limpeza</h3>
+          <p class="product-description">Prepara a pele para receber os ativos com máxima eficácia.</p>
+          <div class="product-price">R$ 97</div>
+          <a href="#" class="btn btn-primary">Adicionar ao Kit</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-number">05 • Perguntas Frequentes</div>
+      <h2>Dúvidas Sobre a BioSkin®?</h2>
+
+      <div class="faq">
+        
+        <div class="faq-item">
+          <details>
+            <summary>A BioSkin® é aprovada pela ANVISA?</summary>
+            <div class="faq-content">
+              <p>Sim! Todos os produtos da linha Pele de Porcelana são registrados e aprovados pela ANVISA, seguindo as normas mais rigorosas de segurança e eficácia.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Em quanto tempo vou ver resultados?</summary>
+            <div class="faq-content">
+              <p>A maioria das mulheres relata mudanças visíveis entre 7 e 14 dias de uso contínuo. Resultados completos aparecem em 8 semanas.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Posso usar se tenho pele sensível?</summary>
+            <div class="faq-content">
+              <p>Sim! A tecnologia BioSkin® foi desenvolvida justamente para evitar irritações. As micro-dosagens inteligentes são muito mais suaves que as altas concentrações dos cosméticos tradicionais.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Como funciona a garantia de 30 dias?</summary>
+            <div class="faq-content">
+              <p>Você tem 30 dias para testar os produtos. Se não ficar satisfeita com os resultados, devolvemos 100% do seu dinheiro, sem perguntas ou burocracia.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Qual a diferença para produtos importados?</summary>
+            <div class="faq-content">
+              <p>A BioSkin® usa tecnologia biomimética de última geração, com taxa de absorção de 87% (vs. 8-15% dos tradicionais), liberação prolongada de 72 horas, e preço 3x menor que os importados.</p>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>Sobre Nós</h4>
+          <p>Scientific Skin Tech desenvolve dermocosméticos de alta performance com tecnologia biomimética brasileira.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Atendimento</h4>
+          <a href="#">Fale Conosco</a>
+          <a href="#">Política de Troca</a>
+          <a href="#">Rastreamento</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Política de Privacidade</a>
+          <a href="#">LGPD</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Scientific Skin Tech. Tecnologia BioSkin® desenvolvida no Brasil.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA Bar -->
+  <div class="sticky-cta">
+    <div class="sticky-cta-content">
+      <div class="sticky-cta-text">
+        <div class="sticky-cta-title">Pele de Porcelana - Kit Completo BioSkin®</div>
+        <div class="sticky-cta-subtitle">De R$ 597 por R$ 297 • Garantia de 30 dias</div>
+      </div>
+      <a href="#" class="btn btn-primary">Garantir com Desconto</a>
+    </div>
+  </div>
+
+</body>
+</html>

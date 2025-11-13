@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LandingDani4 — 7 motivos para preferir a tecnologia brasileira</title>
+  <style>
+    :root{
+      --brand:#d5632a;         /* cor principal */
+      --brand-700:#bf511f;
+      --ink:#1a1a1a;           /* texto principal */
+      --muted:#6b6b6b;         /* texto secundário */
+      --bg:#fffaf7;            /* fundo suave */
+      --card:#ffffff;          /* fundo card */
+      --line:#eee4de;          /* linhas sutis */
+      --radius:16px;
+      --shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px,100%);margin-inline:auto;padding:0 20px}
+
+    /* Header */
+    .topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);backdrop-filter:saturate(140%) blur(6px)}
+    .topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .brand-bullet{width:10px;height:10px;background:var(--brand);border-radius:50%}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{font-size:12px;color:#fff;background:var(--ink);padding:6px 10px;border-radius:999px}
+    .badge--outline{background:transparent;color:var(--ink);border:1px solid var(--line)}
+    .cta{background:var(--brand);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+    .cta:hover{background:var(--brand-700);transform:translateY(-1px)}
+
+    /* Hero */
+    .hero{padding:48px 0}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:28px}
+    .kicker{font-weight:700;color:var(--brand)}
+    h1{font-size:44px;line-height:1.1;margin:10px 0 18px}
+    .subtitle{color:var(--muted);max-width:60ch}
+    .author{display:flex;align-items:center;gap:12px;margin:18px 0}
+    .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(#ebebeb,#dcdcdc)}
+    .hero-card{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .chip{background:#fff;border:1px solid var(--line);padding:8px 10px;border-radius:999px;font-size:13px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .ghost{padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-weight:700}
+    .ghost:hover{border-color:#d8c8bf}
+    .ph{height:260px;border-radius:var(--radius);background:repeating-linear-gradient( 45deg, #e8e0db, #e8e0db 12px, #efe6e0 12px, #efe6e0 24px);border:1px dashed #d8c8bf)
+    }
+
+    /* Local nav */
+    .localnav{position:sticky;top:70px;align-self:start}
+    .localnav .list{border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px}
+    .localnav a{display:block;padding:8px 10px;border-radius:8px;color:var(--ink)}
+    .localnav a:hover{background:#fff3ee}
+    .localnav a.active{background:#fde7dc;color:#000}
+
+    /* Section (Listicle blocks) */
+    section{padding:28px 0}
+    .block{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .block-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:0}
+    .block .media{min-height:260px;background:linear-gradient(#d9d9d9,#cfcfcf);border-right:1px solid var(--line)}
+    .block .content{padding:28px}
+    .eyebrow{font-weight:800;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.12em}
+    .block h2{font-size:28px;margin:6px 0 10px;line-height:1.2}
+    .num{font-size:46px;font-weight:900;color:var(--brand);opacity:.9}
+    .block small{color:var(--muted)}
+
+    /* Comparison table */
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left}
+    th{font-size:14px;color:#333}
+    tbody tr:nth-child(odd){background:#fffdfb}
+
+    /* Benefits list */
+    .checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+    .check{display:flex;gap:8px}
+    .check:before{content:"✔";color:var(--brand);font-weight:900}
+
+    /* Testimonials */
+    .testis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card{border:1px solid var(--line);background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+    .stars{color:#e9a400;font-weight:700}
+    .verify{margin-top:8px;font-size:12px;color:var(--muted)}
+
+    /* Products */
+    .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .product .img{aspect-ratio:4/3;background:linear-gradient(#e6e6e6,#d6d6d6);border-radius:12px;border:1px dashed #d1c2b9}
+    .product h3{margin:10px 0 6px}
+
+    /* Footer */
+    footer{padding:40px 0;border-top:1px solid var(--line);margin-top:24px}
+    .trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .trust .item{background:#111;color:#fff;border-radius:12px;padding:18px;text-align:center}
+
+    /* Utilities */
+    .center{text-align:center}
+    .mt-8{margin-top:8px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .block-grid{grid-template-columns:1fr}
+      .localnav{position:static}
+      .ph{height:200px}
+      .checks{grid-template-columns:1fr}
+      .testis,.products,.trust{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container row">
+      <div class="row" style="gap:10px">
+        <span class="brand"><span class="brand-bullet"></span> Scientific Skin Tech</span>
+        <div class="badges">
+          <span class="badge badge--outline">Tema</span>
+          <span class="badge">Frete grátis • Garantia 30 dias</span>
+        </div>
+      </div>
+      <nav class="badges">
+        <a class="cta" href="#produtos">Comprar agora</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker">Oferta ativa · Kit Pele de Porcelana</div>
+        <h1>7 motivos para preferir BioSkin® em vez de fórmulas internacionais</h1>
+        <p class="subtitle">Tecnologia brasileira desenvolvida pelo <strong>Dr. Rafael Arpini</strong> para reativar a inteligência natural da pele e entregar <strong>resultados de consultório em casa</strong>, com alta tolerância.</p>
+        <div class="author">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <strong>Dr. Rafael Arpini</strong><br>
+            <small>Dermatologista • Scientific Skin Tech</small>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <span class="chip">13 ativos inteligentes</span>
+          <span class="chip">Alta tolerância</span>
+          <span class="chip">Cruelty‑free</span>
+          <span class="chip">Em até 12x</span>
+          <div class="hero-actions">
+            <a class="cta" href="#motivo-1">Conheça a tecnologia</a>
+            <a class="ghost" href="#produtos">Ver kits disponíveis</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="localnav">
+        <div class="list">
+          <a class="active" href="#motivo-1">1. Age na comunicação celular</a>
+          <a href="#motivo-2">2. Resultados progressivos</a>
+          <a href="#motivo-3">3. Alta tolerância</a>
+          <a href="#motivo-4">4. 13 ativos inteligentes</a>
+          <a href="#motivo-5">5. Menos passos, mais adesão</a>
+          <a href="#motivo-6">6. Prova clínica e social</a>
+          <a href="#motivo-7">7. Custo‑benefício vencedor</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- BLOCO 1: COMPARATIVO -->
+    <section id="motivo-1">
+      <div class="block block-grid">
+        <div class="media" role="img" aria-label="Imagem comparativa"></div>
+        <div class="content">
+          <div class="eyebrow">Motivo <span class="num">1</span></div>
+          <h2>BioSkin® vs. ativos internacionais</h2>
+          <p>Durante anos, os dermocosméticos importados dominaram o mercado. A tecnologia <strong>BioSkin®</strong>, desenvolvida no Brasil, está entregando <strong>resultados de consultório em casa</strong>, com segurança e eficácia comprovadas.</p>
+          <table>
+            <thead>
+              <tr><th>Critério</th><th>Fórmulas Internacionais</th><th>BioSkin® (Tecnologia Nacional)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Base de atuação</td><td>Superficial</td><td><strong>Regenerativa</strong>, comunicação celular</td></tr>
+              <tr><td>Ingredientes</td><td>Ácidos e sintéticos</td><td>Biomiméticos, prebióticos e peptídeos</td></tr>
+              <tr><td>Compatibilidade</td><td>Pode sensibilizar</td><td><strong>Alta tolerância</strong> para todos os tipos de pele</td></tr>
+              <tr><td>Resultados</td><td>Temporários</td><td>Progressivos e duradouros</td></tr>
+              <tr><td>Origem</td><td>Laboratórios tradicionais</td><td>Desenvolvida por médico pesquisador</td></tr>
+              <tr><td>Foco</td><td>Correção estética</td><td>Reativação biológica natural</td></tr>
+            </tbody>
+          </table>
+          <small>Enquanto cosméticos tradicionais cobrem a pele, a BioSkin® ensina a pele a se regenerar.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 2: RESULTADOS -->
+    <section id="motivo-2">
+      <div class="block block-grid" style="grid-template-columns:1fr 1.1fr">
+        <div class="content">
+          <div class="eyebrow">Motivo <span class="num">2</span></div>
+          <h2>Resultados que competem com os melhores laboratórios</h2>
+          <p>Estudos e relatos clínicos comprovam: produtos com tecnologia BioSkin® entregam <strong>efeito de procedimento estético, sem agulhas</strong> e com segurança dermatológica.</p>
+          <div class="checks">
+            <div class="check">Textura e firmeza visivelmente melhoradas</div>
+            <div class="check">Redução de linhas finas e poros dilatados</div>
+            <div class="check">Pele mais uniforme, hidratada e luminosa</div>
+            <div class="check">Resultados progressivos e duradouros</div>
+          </div>
+          <div class="hero-actions mt-16">
+            <a class="cta" href="#produtos">Quero experimentar</a>
+            <a class="ghost" href="#depoimentos">Ver avaliações (4.8★)</a>
+          </div>
+        </div>
+        <div class="media ph" aria-label="Placeholder Antes e Depois"></div>
+      </div>
+    </section>
+
+    <!-- BLOCO 3: ORIGEM/CIÊNCIA -->
+    <section id="motivo-3">
+      <div class="block block-grid">
+        <div class="media" aria-hidden="true"></div>
+        <div class="content">
+          <div class="eyebrow">Motivo <span class="num">3</span></div>
+          <h2>Uma inovação que nasceu dentro do consultório</h2>
+          <p>Após anos de prática clínica, o <strong>Dr. Rafael Arpini</strong> percebeu que cosméticos tradicionais irritavam e sobrecarregavam a pele. A partir dessa observação nasceu a <strong>BioSkin®</strong>: tecnologia biomimética que respeita a biologia natural da pele e <strong>reativa seus próprios mecanismos de regeneração</strong>.</p>
+          <blockquote style="border-left:4px solid var(--brand);padding-left:12px;margin:14px 0 0">“A BioSkin não tenta substituir a pele. Ela apenas ativa o que ela já sabe fazer de melhor.”<br><small>— Dr. Rafael Arpini, médico e fundador</small></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 4: PROVA SOCIAL / DEPOIMENTOS -->
+    <section id="motivo-4">
+      <div class="block" style="padding:24px">
+        <div class="eyebrow">Motivo <span class="num">4</span></div>
+        <h2>A tecnologia que conquistou dermatologistas e consumidores</h2>
+        <p>Mais de <strong>10.000 pessoas</strong> já experimentaram a linha Pele de Porcelana. Média <strong>4.8★</strong>.</p>
+        <div id="depoimentos" class="testis mt-16">
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p>Textura muito mais uniforme em 30 dias sem irritar. Virou meu básico de rotina.</p>
+            <div class="verify">Compra verificada</div>
+          </div>
+          <div class="card">
+            <div class="stars">★★★★☆</div>
+            <p>Pele luminosa e poros mais fechados. Adesão fácil porque tem menos passos.</p>
+            <div class="verify">Compra verificada</div>
+          </div>
+          <div class="card">
+            <div class="stars">★★★★★</div>
+            <p>Resultados reais de consultório em casa. Sem ardência — alta tolerância.</p>
+            <div class="verify">Compra verificada</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 5: PRODUTOS / CTA -->
+    <section id="produtos">
+      <div class="block" style="padding:24px">
+        <div class="eyebrow">Motivo <span class="num">5</span></div>
+        <h2>Resultados de consultório em casa — escolha seu kit</h2>
+        <div class="products mt-16">
+          <div class="card product">
+            <div class="img" aria-hidden="true"></div>
+            <h3>Kit Pele de Porcelana</h3>
+            <small>13 ativos inteligentes · Alta tolerância</small>
+            <div class="hero-actions mt-8">
+              <a class="cta" href="#">Comprar agora</a>
+              <a class="ghost" href="#">Ver detalhes</a>
+            </div>
+          </div>
+          <div class="card product">
+            <div class="img" aria-hidden="true"></div>
+            <h3>Sérum BioSkin® Pro</h3>
+            <small>Peptídeos biomiméticos · Uso diário</small>
+            <div class="hero-actions mt-8">
+              <a class="cta" href="#">Comprar agora</a>
+              <a class="ghost" href="#">Ver detalhes</a>
+            </div>
+          </div>
+          <div class="card product">
+            <div class="img" aria-hidden="true"></div>
+            <h3>Hidratante Inteligente</h3>
+            <small>Barreira reforçada · Glow imediato</small>
+            <div class="hero-actions mt-8">
+              <a class="cta" href="#">Comprar agora</a>
+              <a class="ghost" href="#">Ver detalhes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 6: FECHAMENTO CIENTÍFICO -->
+    <section id="motivo-6">
+      <div class="block block-grid" style="grid-template-columns:1fr 1fr">
+        <div class="content">
+          <div class="eyebrow">Motivo <span class="num">6</span></div>
+          <h2>A ciência brasileira que está mudando o skincare</h2>
+          <p>O avanço da biotecnologia nacional prova que inovação e eficácia não são exclusividade de laboratórios estrangeiros. Nasce da combinação entre <strong>pesquisa</strong>, <strong>propósito</strong> e <strong>ciência feita no Brasil</strong>, para peles reais, resultados reais.</p>
+          <div class="hero-actions mt-16">
+            <a class="cta" href="#produtos">Experimentar agora</a>
+            <a class="ghost" href="#">Conheça a linha completa</a>
+          </div>
+        </div>
+        <div class="media ph" aria-hidden="true"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="trust">
+        <div class="item">Frete grátis</div>
+        <div class="item">Garantia 30 dias</div>
+        <div class="item">Compra segura</div>
+      </div>
+      <p class="center mt-24" style="color:var(--muted)">© Scientific Skin Tech — BioSkin®</p>
+    </div>
+  </footer>
+
+  <script>
+    // Local nav active state on scroll
+    const links=[...document.querySelectorAll('.localnav a')];
+    const ids=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const onScroll=()=>{
+      const y=window.scrollY+100; // offset
+      let current=links[0];
+      ids.forEach((sec,i)=>{if(sec.offsetTop<=y) current=links[i];});
+      links.forEach(a=>a.classList.remove('active'));
+      current.classList.add('active');
+    };
+    document.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
+  </script>
+</body>
+</html>

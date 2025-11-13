@@ -28,8 +28,8 @@ const server = http.createServer((req, res) => {
     filePath = '/index.html';
   }
 
-  // Constrói o caminho completo do arquivo
-  const fullPath = path.join(__dirname, filePath);
+  // Constrói o caminho completo do arquivo na pasta public
+  const fullPath = path.join(__dirname, 'public', filePath);
   const extname = path.extname(fullPath);
   const contentType = mimeTypes[extname] || 'application/octet-stream';
 

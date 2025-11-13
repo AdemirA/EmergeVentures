@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BioSkin® vs. Ativos Internacionais — Scientific Skin Tech</title>
+  <meta name="description" content="Comparativo objetivo entre a tecnologia brasileira BioSkin® e fórmulas internacionais. Resultados reais de pele com segurança e alta performance." />
+  <style>
+    :root {
+      --brand: #1a73e8; /* ajuste livremente para a cor principal */
+      --brand-2: #0f4ec7;
+      --bg: #ffffff;
+      --text: #111112;
+      --muted: #666b73;
+      --border: #e7e9ee;
+      --accent: #f7f9fc;
+      --success: #0ea05a;
+      --warning: #d5632a; /* opção para avisos/pontos de destaque */
+      --star: #ffb400;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: var(--bg); }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width:100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .grid { display: grid; gap: 24px; }
+
+    /* Header estilo editorial (inspirado em portais) */
+    header.topbar { border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 50; }
+    .topbar-inner { display:flex; align-items:center; justify-content:space-between; height:64px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; }
+    .brand .dot { width:10px; height:10px; background:var(--brand); border-radius:50%; display:inline-block; }
+    .top-actions { display:flex; align-items:center; gap:12px; }
+    .share { display:flex; gap:8px; align-items:center; }
+    .share button { width:36px; height:36px; border:1px solid var(--border); background:#fff; border-radius:8px; cursor:pointer; }
+    .share svg { width:18px; height:18px; }
+    .cta-mini { padding:10px 14px; border-radius:10px; background:var(--brand); color:#fff; font-weight:600; border: none; cursor: pointer; }
+
+    /* Hero */
+    .hero { padding: 28px 0 8px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #fff 0%, var(--accent) 100%); }
+    .hero-wrap { display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items:center; }
+    .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--brand); font-weight: 700; }
+    h1.title { font-size: clamp(26px, 3.2vw, 44px); line-height: 1.08; margin: 8px 0 12px; }
+    .subtitle { font-size: 18px; color: var(--muted); }
+    .author { display:flex; align-items:center; gap:12px; margin-top:16px; color: var(--muted); }
+    .avatar { width:40px; height:40px; border-radius:50%; background:#d9d9d9; flex: none; }
+    .hero-badge { display:flex; gap:8px; align-items:center; margin-top:10px; }
+    .badge { font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); background:#fff; }
+
+    .hero-card { background:#fff; border:1px solid var(--border); border-radius:16px; padding:16px; box-shadow: 0 6px 18px rgba(0,0,0,.04); }
+    .hero-img { width:100%; aspect-ratio: 4/3; background:#d9d9d9; border-radius:12px; }
+    .hero-list { margin:14px 0 0; padding:0; list-style:none; display:grid; gap:8px; }
+    .hero-list li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:#2d3137; }
+    .hero-list .dot { width:8px; height:8px; background:var(--success); border-radius:50%; margin-top:6px; }
+    .cta-row { display:flex; gap:12px; align-items:center; margin-top:14px; }
+    .btn-primary { background: linear-gradient(180deg, var(--brand), var(--brand-2)); border:none; color:#fff; padding:14px 18px; border-radius:12px; font-weight:700; cursor:pointer; }
+    .btn-secondary { background:#fff; color: var(--brand-2); border:1px solid var(--border); padding:12px 16px; border-radius:12px; font-weight:700; cursor:pointer; }
+    .kickers { display:flex; gap:16px; margin-top:8px; color: var(--muted); font-size: 12px; }
+
+    /* Sticky CTA (estilo Javvy) */
+    .sticky-cta { position: sticky; bottom:0; background:#fff; border-top:1px solid var(--border); padding:12px 0; z-index: 40; }
+    .sticky-wrap { display:flex; gap:16px; align-items:center; justify-content:space-between; }
+    .sticky-left { display:flex; gap:10px; align-items:center; }
+    .pill { padding:6px 10px; background: var(--accent); color:#1c2330; border-radius:999px; font-weight:600; font-size:12px; border:1px solid var(--border); }
+
+    /* Conteúdo principal */
+    main { padding: 28px 0 80px; }
+    section { padding: 24px 0; }
+    section .section-title { font-size: 22px; margin: 0 0 10px; }
+    .section-sub { color: var(--muted); margin: 6px 0 16px; }
+
+    /* Comparativo Tabela */
+    .compare { border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+    .compare table { width:100%; border-collapse: collapse; background:#fff; }
+    .compare th, .compare td { padding: 14px 12px; border-bottom: 1px solid var(--border); text-align:left; font-size: 15px; }
+    .compare th { background: var(--accent); font-size: 13px; letter-spacing:.04em; text-transform: uppercase; color: #3b4250; }
+    .compare td em { color: var(--muted); font-style: normal; }
+
+    /* Blocos comparativos visuais */
+    .visuals { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .vcard { background:#fff; border:1px solid var(--border); border-radius:14px; padding:16px; text-align:center; }
+    .v-icon { width:72px; height:72px; border-radius:12px; background:#d9d9d9; margin: 6px auto 10px; }
+    .v-meta { font-size:12px; color: var(--muted); }
+    .v-metric { font-size:22px; font-weight:800; }
+    .hint { font-size:12px; color: var(--muted); margin-top: 4px; }
+
+    /* Antes/Depois */
+    .before-after { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .ba { border:1px solid var(--border); background:#fff; border-radius:14px; padding:10px; }
+    .ba .img { width:100%; aspect-ratio: 4/5; background:#d9d9d9; border-radius:10px; }
+    .seal { display:inline-flex; gap:8px; align-items:center; padding:8px 10px; border-radius:999px; border:1px dashed var(--success); color: var(--success); font-weight:700; font-size:12px; margin-top:8px; }
+
+    /* Prova social */
+    .stars { color: var(--star); }
+    .reviews { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .review { background:#fff; border:1px solid var(--border); border-radius:14px; padding:16px; position:relative; }
+    .verified { position:absolute; bottom:10px; right:12px; font-size:11px; color: var(--muted); }
+
+    /* Cards de produto */
+    .product-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .product { background:#fff; border:1px solid var(--border); border-radius:14px; padding:14px; }
+    .product .ph { width:100%; aspect-ratio: 1/1; background:#d9d9d9; border-radius:10px; }
+    .product h4 { margin:10px 0 6px; }
+    .badge-line { display:flex; gap:8px; flex-wrap: wrap; margin-top:6px; }
+
+    /* FAQ */
+    details { background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px 16px; }
+    details + details { margin-top:10px; }
+    summary { cursor:pointer; font-weight:700; }
+
+    /* Layout lateral (editorial) */
+    .content-grid { display:grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items:start; }
+    .sidebar { position: sticky; top: 84px; display:grid; gap:12px; }
+    .s-card { border:1px solid var(--border); border-radius:14px; background:#fff; padding:14px; }
+    .s-card .ph { width:100%; aspect-ratio: 5/3; background:#d9d9d9; border-radius:10px; }
+    .s-card h4 { margin:8px 0 6px; }
+    .guarantee { display:flex; gap:10px; align-items:flex-start; }
+
+    /* Footer */
+    footer { border-top:1px solid var(--border); padding:28px 0 60px; color: var(--muted); font-size: 13px; }
+
+    /* Responsivo */
+    @media (max-width: 960px) {
+      .hero-wrap { grid-template-columns: 1fr; }
+      .content-grid { grid-template-columns: 1fr; }
+      .visuals { grid-template-columns: 1fr 1fr; }
+      .before-after { grid-template-columns: 1fr; }
+      .reviews, .product-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .visuals, .reviews, .product-grid { grid-template-columns: 1fr; }
+      .sticky-wrap { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand" aria-label="Scientific Skin Tech">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Scientific Skin Tech</span>
+      </div>
+      <div class="top-actions">
+        <div class="share" aria-label="Compartilhar">
+          <button title="Compartilhar no WhatsApp" aria-label="WhatsApp">
+            <!-- WhatsApp -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.5 3.5a10 10 0 0 1-14.14 14.14L3 21l3.36-3.36A10 10 0 1 1 20.5 3.5Z"/><path d="M7.5 9.5c.5 3 3.5 5.5 6 6"/></svg>
+          </button>
+          <button title="Compartilhar no Instagram" aria-label="Instagram">
+            <!-- IG -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </button>
+          <button title="Compartilhar no Facebook" aria-label="Facebook">
+            <!-- FB -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 8h3V5h-3a4 4 0 0 0-4 4v3H7v3h3v6h3v-6h3l1-3h-4V9a1 1 0 0 1 1-1Z"/></svg>
+          </button>
+          <button title="Copiar link" aria-label="Copiar link">
+            <!-- Link -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
+          </button>
+        </div>
+        <button class="cta-mini" aria-label="Ir para compra">Comprar agora</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <div class="eyebrow">Tecnologia brasileira x fórmulas internacionais</div>
+        <h1 class="title">Por que a tecnologia brasileira está superando as fórmulas internacionais em resultados reais de pele</h1>
+        <p class="subtitle">Desenvolvida pelo Dr. Rafael Arpini, a tecnologia <strong>BioSkin®</strong> ativa os mecanismos naturais de regeneração e entrega performance clínica em casa — com alta tolerância e segurança.</p>
+        <div class="author">
+          <div class="avatar" role="img" aria-label="Foto do Dr. Rafael Arpini"></div>
+          <div>
+            <strong>Dr. Rafael Arpini</strong>
+            <div class="kickers"><span>Dermatologista</span><span>•</span><span>Scientific Skin Tech</span></div>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <span class="badge">Tecnologia BioSkin®</span>
+          <span class="badge">Desenvolvida no Brasil</span>
+          <span class="badge">Cruelty‑free</span>
+        </div>
+        <div class="cta-row">
+          <button class="btn-primary" aria-label="Experimentar agora">Experimente agora</button>
+          <button class="btn-secondary" aria-label="Ver linha Pele de Porcelana">Ver linha completa</button>
+        </div>
+        <div class="kickers"><span>⭐ 4,8/5 média</span><span>•</span><span>Mais de 10.000 clientes</span></div>
+      </div>
+      <aside class="hero-card">
+        <div class="hero-img" aria-label="Placeholder do Dr. e produto"></div>
+        <ul class="hero-list">
+          <li><span class="dot"></span>Resultados progressivos e duradouros</li>
+          <li><span class="dot"></span>Alta tolerância: ideal para peles sensíveis</li>
+          <li><span class="dot"></span>13 ativos inteligentes + BioSkin®</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" role="region" aria-label="Barra de conversão">
+    <div class="container sticky-wrap">
+      <div class="sticky-left">
+        <span class="pill">Oferta ativa</span>
+        <strong>Tratamento Pele de Porcelana</strong>
+        <span class="kickers">Frete grátis • Garantia de satisfação</span>
+      </div>
+      <div class="cta-row">
+        <button class="btn-primary">Quero experimentar</button>
+        <button class="btn-secondary">Ver avaliações</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container content-grid">
+      <!-- Conteúdo -->
+      <div>
+        <!-- 1. Comparativo -->
+        <section id="comparativo">
+          <h2 class="section-title">1. BioSkin® vs. Fórmulas Internacionais</h2>
+          <p class="section-sub">Importados dominaram por décadas, mas a biotecnologia nacional mudou o jogo. Compare ponto a ponto:</p>
+          <div class="compare" role="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Critério</th>
+                  <th>Fórmulas Internacionais</th>
+                  <th>BioSkin® (Tecnologia Nacional)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Base de atuação</td>
+                  <td>Superficial</td>
+                  <td><strong>Regenerativa</strong>, comunicação celular</td>
+                </tr>
+                <tr>
+                  <td>Composição</td>
+                  <td>Ácidos e derivados sintéticos</td>
+                  <td>Biomiméticos, prebióticos e peptídeos inteligentes</td>
+                </tr>
+                <tr>
+                  <td>Compatibilidade</td>
+                  <td>Pode sensibilizar</td>
+                  <td>Alta tolerância para todos os tipos de pele</td>
+                </tr>
+                <tr>
+                  <td>Resultados</td>
+                  <td>Imediatos, porém temporários</td>
+                  <td>Progressivos e duradouros</td>
+                </tr>
+                <tr>
+                  <td>Origem</td>
+                  <td>Laboratórios tradicionais</td>
+                  <td>Desenvolvida por médico pesquisador</td>
+                </tr>
+                <tr>
+                  <td>Foco</td>
+                  <td>Correção estética</td>
+                  <td>Reativação biológica natural</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Blocos comparativos visuais (tangibilização) -->
+          <div class="visuals" aria-label="Comparativos visuais">
+            <div class="vcard">
+              <div class="v-icon" aria-hidden="true"></div>
+              <div class="v-meta">Quantidade de passos</div>
+              <div class="v-metric">1 kit x 4 produtos</div>
+              <div class="hint">Menos fricção, mais adesão ao tratamento</div>
+            </div>
+            <div class="vcard">
+              <div class="v-icon" aria-hidden="true"></div>
+              <div class="v-meta">Tempo médio para notar resultados</div>
+              <div class="v-metric">7–14 dias</div>
+              <div class="hint">Resultados progressivos sem agredir</div>
+            </div>
+            <div class="vcard">
+              <div class="v-icon" aria-hidden="true"></div>
+              <div class="v-meta">Tipo de ativos</div>
+              <div class="v-metric">13 ativos inteligentes</div>
+              <div class="hint">Peptídeos + biomiméticos + prebióticos</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Resultados -->
+        <section id="resultados">
+          <h2 class="section-title">2. Resultados que competem com os melhores laboratórios do mundo</h2>
+          <p class="section-sub">Resultados de consultório em casa, sem agulhas e sem irritação.</p>
+          <div class="before-after">
+            <div class="ba">
+              <div class="img" aria-label="Antes"></div>
+              <div class="seal">Resultados reais — Pele de Porcelana</div>
+            </div>
+            <div class="ba">
+              <div class="img" aria-label="Depois"></div>
+              <div class="seal">Sem ácido agressivo • Alta tolerância</div>
+            </div>
+          </div>
+          <div class="reviews" style="margin-top:14px;">
+            <article class="review">
+              <div class="stars">★★★★★</div>
+              <p>Textura e luminosidade em 2 semanas. Sensação de clínica, mas em casa.</p>
+              <div class="verified">Compra verificada</div>
+            </article>
+            <article class="review">
+              <div class="stars">★★★★☆</div>
+              <p>Reduziu poros e linhas. Pele mais estável, sem ardor.</p>
+              <div class="verified">Compra verificada</div>
+            </article>
+            <article class="review">
+              <div class="stars">★★★★★</div>
+              <p>Melhora de firmeza visível e sem descamar. Recomendo.</p>
+              <div class="verified">Compra verificada</div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3. Origem clínica -->
+        <section id="origem">
+          <h2 class="section-title">3. Uma inovação que nasceu dentro do consultório</h2>
+          <p class="section-sub">A partir de anos de prática, o Dr. Rafael Arpini desenhou uma abordagem biomimética que respeita a biologia da pele.</p>
+          <blockquote>“A BioSkin não substitui a pele — ela ensina a pele a funcionar no seu melhor.” — <strong>Dr. Rafael Arpini</strong></blockquote>
+        </section>
+
+        <!-- 4. Credenciais e prova social -->
+        <section id="credenciais">
+          <h2 class="section-title">4. A tecnologia que está conquistando dermatologistas e consumidores</h2>
+          <ul class="hero-list">
+            <li><span class="dot"></span>Destaque em congressos e podcasts de dermatologia</li>
+            <li><span class="dot"></span>Mais de <strong>10.000</strong> pessoas na linha Pele de Porcelana</li>
+            <li><span class="dot"></span>Produto nacional com padrão internacional</li>
+          </ul>
+        </section>
+
+        <!-- 5. Linha e CTAs -->
+        <section id="produtos">
+          <h2 class="section-title">5. A revolução começa em casa</h2>
+          <p class="section-sub">BioSkin® + 13 ativos inteligentes: reparo, fortalecimento e rejuvenescimento.</p>
+          <div class="product-grid">
+            <article class="product">
+              <div class="ph" aria-label="Produto 1"></div>
+              <h4>Kit Pele de Porcelana (Completo)</h4>
+              <div class="badge-line">
+                <span class="badge">Frete grátis</span>
+                <span class="badge">Garantia 30 dias</span>
+              </div>
+              <div class="cta-row"><button class="btn-primary">Comprar agora</button><button class="btn-secondary">Detalhes</button></div>
+            </article>
+            <article class="product">
+              <div class="ph" aria-label="Produto 2"></div>
+              <h4>Sérum Regenerativo BioSkin®</h4>
+              <div class="badge-line">
+                <span class="badge">Alta tolerância</span>
+                <span class="badge">Dermatologicamente testado</span>
+              </div>
+              <div class="cta-row"><button class="btn-primary">Comprar agora</button><button class="btn-secondary">Detalhes</button></div>
+            </article>
+            <article class="product">
+              <div class="ph" aria-label="Produto 3"></div>
+              <h4>Creme Reparador Noturno</h4>
+              <div class="badge-line">
+                <span class="badge">Sem fragrâncias agressivas</span>
+                <span class="badge">Cruelty‑free</span>
+              </div>
+              <div class="cta-row"><button class="btn-primary">Comprar agora</button><button class="btn-secondary">Detalhes</button></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 6. Ciência nacional -->
+        <section id="ciencia">
+          <h2 class="section-title">6. A ciência brasileira que está mudando o skincare</h2>
+          <p class="section-sub">Inovação nasce de pesquisa, propósito e proximidade com peles reais. Resultados internacionais, tecnologia brasileira.</p>
+          <div class="cta-row">
+            <button class="btn-primary">Quero experimentar</button>
+            <button class="btn-secondary">Ver avaliações</button>
+          </div>
+        </section>
+
+        <!-- FAQ focado em conversão -->
+        <section id="faq">
+          <h2 class="section-title">Perguntas frequentes</h2>
+          <details>
+            <summary>Funciona para pele sensível?</summary>
+            <p>Sim. A tecnologia BioSkin® utiliza ativos biomiméticos e prebióticos com alta tolerância, ideal para quem já sofreu com ácidos agressivos.</p>
+          </details>
+          <details>
+            <summary>Em quanto tempo vejo resultados?</summary>
+            <p>Em média, entre 7 e 14 dias é possível perceber melhora de textura e viço. Resultados são progressivos com uso contínuo.</p>
+          </details>
+          <details>
+            <summary>Posso usar junto com ácidos?</summary>
+            <p>Sim, porém recomendamos iniciar somente com BioSkin® por 2 semanas para estabilizar a pele e, depois, reintroduzir outros ativos conforme orientação profissional.</p>
+          </details>
+          <details>
+            <summary>Qual é a política de garantia?</summary>
+            <p>Garantia de satisfação em 30 dias. Se não amar, ajudamos você no processo de devolução.</p>
+          </details>
+        </section>
+      </div>
+
+      <!-- Sidebar editorial/apoio -->
+      <aside class="sidebar">
+        <div class="s-card">
+          <div class="ph" aria-label="Imagem do produto"></div>
+          <h4>Oferta do dia</h4>
+          <p>Kit Pele de Porcelana com frete grátis e garantia de satisfação.</p>
+          <button class="btn-primary" style="width:100%">Comprar agora</button>
+        </div>
+        <div class="s-card guarantee">
+          <div class="avatar" aria-hidden="true"></div>
+          <div>
+            <strong>Garantia 30 dias</strong>
+            <p class="section-sub">Teste sem risco. Se não amar, devolvemos.</p>
+          </div>
+        </div>
+        <div class="s-card">
+          <h4>Média de avaliações</h4>
+          <div class="stars" aria-label="4.8 de 5">★★★★☆ (4,8)</div>
+          <p class="section-sub">Baseado em avaliações verificadas.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div>
+          <strong>Scientific Skin Tech</strong>
+          <p>BioSkin® — biotecnologia de ponta feita no Brasil.</p>
+        </div>
+        <div>
+          <strong>Ajuda</strong>
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap:8px;">
+            <a href="#faq">Perguntas frequentes</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#comparativo">Comparativo</a>
+            <a href="#resultados">Resultados</a>
+          </div>
+        </div>
+        <div>
+          <strong>Políticas</strong>
+          <div class="grid" style="grid-template-columns: 1fr; gap:8px;">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos de uso</a>
+            <a href="#">Trocas & devoluções</a>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:16px">© <span id="year"></span> Scientific Skin Tech — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // (Opcional) handlers de clique para testes A/B
+    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+      btn.addEventListener('click', () => {
+        console.log('CTA:', btn.innerText);
+      });
+    });
+  </script>
+</body>
+</html>
